@@ -1,0 +1,22 @@
+{
+  "name": "compass-breakpoint",
+  "version": "2.0.6",
+  "main": "stylesheets/_breakpoint.scss",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components",
+    "test"
+  ],
+  "homepage": "https://github.com/Team-Sass/breakpoint",
+  "_release": "2.0.6",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.0.6",
+    "commit": "cc9fbaf760a2075b1dae0606bc724bd3579af7b6"
+  },
+  "_source": "git://github.com/Team-Sass/breakpoint.git",
+  "_target": "2.0.6",
+  "_originalSource": "compass-breakpoint",
+  "_direct": true
+}
