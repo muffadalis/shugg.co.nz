@@ -10,7 +10,7 @@
 
   <main class="main">
 
-
+{{ if not (eq .Kind "home") }}
     <!-- Page Title -->
     <div class="page-title light-background">
       <div class="container d-lg-flex justify-content-between align-items-center">
@@ -23,6 +23,7 @@
         </nav>
       </div>
     </div><!-- End Page Title -->
+{{ end }}
 
 
   {{ block "main" . }}{{ end }}

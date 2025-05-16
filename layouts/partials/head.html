@@ -1,6 +1,12 @@
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>{{ .Title }}</title>
+<title>
+{{ if eq .Kind "home" }}
+  {{ .Site.Title }}
+{{ else }}
+    {{ .Site.Title }} - {{ .Title }}
+{{ end }}
+</title>
 <meta name="description" content="{{ .Site.Params.description }}">
 <meta name="keywords" content="{{ .Site.Params.keywords }}">
 
@@ -25,19 +31,3 @@
 
 <!-- Main CSS File -->
 <link href="{{ "assets/css/main.css" | relURL }}" rel="stylesheet">
-
-
-
-<!-- Favicons 
-<link href="{{ "assets/img/favicon.png" | relURL }}" rel="icon">
-<link href="{{ "assets/img/apple-touch-icon.png" | relURL }}" rel="apple-touch-icon">
--->
-<!-- Fonts & CSS 
-<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-<link href="{{ "assets/vendor/bootstrap/css/bootstrap.min.css" | relURL }}" rel="stylesheet">
-<link href="{{ "assets/vendor/bootstrap-icons/bootstrap-icons.css" | relURL }}" rel="stylesheet">
-<link href="{{ "assets/vendor/aos/aos.css" | relURL }}" rel="stylesheet">
-<link href="{{ "assets/vendor/glightbox/css/glightbox.min.css" | relURL }}" rel="stylesheet">
-<link href="{{ "assets/vendor/swiper/swiper-bundle.min.css" | relURL }}" rel="stylesheet">
-<link href="{{ "assets/css/main.css" | relURL }}" rel="stylesheet">
--->
