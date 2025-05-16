@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{ partial "head.html" . }}
+</head>
+
+<body class="index-page">
+
+  {{ partial "header.html" . }}
+
+  <main class="main">
+
+
+    <!-- Page Title -->
+    <div class="page-title light-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">{{ .Title }}</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="{{ "/" | relURL }}">Home</a></li>
+            <li class="current">{{ .Title }}</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+
+  {{ block "main" . }}{{ end }}
+
+  </main>
+
+  {{ partial "footer.html" . }}
+
+  {{ partial "scripts.html" . }}
+
+</body>
+
+</html>
