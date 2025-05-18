@@ -1538,7 +1538,7 @@ section,
 
 .features .nav-link {
   border: 0;
-  padding: 12px 15px 12px 0;
+  padding: 15px;
   transition: 0.3s;
   color: var(--default-color);
   border-radius: 0;
@@ -1552,9 +1552,9 @@ section,
 }
 
 .features .nav-link.active {
-  color: var(--accent-color);
+  color: var(--bs-white) !important;
   border-color: var(--accent-color);
-  background-color: var(--background-color);
+  background-color: var(--accent-color);
 }
 
 .features .tab-pane.active {

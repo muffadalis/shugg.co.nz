@@ -9,7 +9,15 @@
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
   </url><url>
+    <loc>http://localhost:1313/products/dh/</loc>
+  </url><url>
+    <loc>http://localhost:1313/products/</loc>
+  </url><url>
     <loc>http://localhost:1313/services/</loc>
+  </url><url>
+    <loc>http://localhost:1313/products/sh_bf/</loc>
+  </url><url>
+    <loc>http://localhost:1313/products/sh_tf/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
   </url>
