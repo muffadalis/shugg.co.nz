@@ -12,20 +12,20 @@
       <link>http://localhost:1313/products/dh/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/products/dh/</guid>
-      <description>&lt;p&gt;Only one pane moves.&#xA;The top panel can move down to protect a fall or a swimming pool area. The bottom panel can slide up to form a servery or in tall windows with a high sill to allow for mid level ventilation.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Designed for safety, ventilation, and architectural versatility.&lt;/p&gt;&#xA;&lt;p&gt;The Single Hung - Bottom Fixed window features a movable top sash and a fixed lower sash. This configuration is ideal for scenarios where safety, controlled airflow, and minimal obstruction are critical — such as near pools, high balconies, or child-accessible areas.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Single Hung - Bottom Fixed</title>
-      <link>http://localhost:1313/products/sh_bf/</link>
+      <link>http://localhost:1313/products/single_hung_bf/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/products/sh_bf/</guid>
+      <guid>http://localhost:1313/products/single_hung_bf/</guid>
       <description></description>
     </item>
     <item>
       <title>Single Hung - Top Fixed</title>
-      <link>http://localhost:1313/products/sh_tf/</link>
+      <link>http://localhost:1313/products/single_hung_tf/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/products/sh_tf/</guid>
+      <guid>http://localhost:1313/products/single_hung_tf/</guid>
       <description>&lt;p&gt;Only one pane moves.&#xA;The top panel can move down to protect a fall or a swimming pool area. The bottom panel can slide up to form a servery or in tall windows with a high sill to allow for mid level ventilation.&lt;/p&gt;</description>
     </item>
   </channel>

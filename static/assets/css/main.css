@@ -718,6 +718,11 @@ h6 {
 /*--------------------------------------------------------------
 # Global Sections
 --------------------------------------------------------------*/
+.section-tight {
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+
 section,
 .section {
   color: var(--default-color);
