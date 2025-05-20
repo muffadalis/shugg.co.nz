@@ -1,15 +1,9 @@
 ---
-title: "Single Hung - Bottom Fixed"
-description: "Only one pane moves. The top panel can move down to protect a fall or a swimming pool area."
-image: "/assets/img/products/SH_BF.png"
+title: "2 Panel Single Glazed Double Hung"
+description: ""
+image: "/assets/img/products/DH.png"
 
 features: |
-  Designed for safety, ventilation, and architectural versatility.
-
-  The Single Hung - Bottom Fixed window features a movable top sash and a fixed lower sash. This configuration is ideal for scenarios where safety, controlled airflow, and minimal obstruction are critical — such as near pools, high balconies, or child-accessible areas.
-
-  **Key Features:**
-
   - **Top Sash Operability:** The upper pane slides vertically downward, allowing ventilation while keeping the bottom area sealed — perfect for preventing falls or water intrusion.
   - **Fixed Bottom Panel:** The bottom sash remains immobile, offering structural integrity and preventing access from lower sections — enhancing security and child safety.
   - **Slim, Modern Profile:** Clean lines and a minimalistic frame support contemporary architectural styles and unobstructed views.
@@ -20,10 +14,15 @@ features: |
   This window design is especially effective in residential, institutional, and commercial applications where upper-only airflow is desired, without compromising security or safety.
 
 
-drawings: |
-   - [PDF](downloads/sh_elevation.pdf) | [DWG](downloads/sh_elevation.dwg) Drawing in APL frame 
-   - [📄 PDF](downloads/sh_elevation.pdf) | [📐 DWG](downloads/sh_elevation.dwg) Drawing in Metro frame
+drawings_filters:
+  Style: "Double Hung"
+  NoOfPanes: "2"
 
+configurations:
+  - name: "4 Panel Double Hung"
+    image: "/assets/img/products/DH.png"
+    url: "/products/2-panel-double-hung"
+    
 applications: |
   - **Swimming Pool Enclosures:** Prevents direct access from below while allowing upper ventilation, enhancing child safety and compliance with pool barrier regulations.
   - **High-Rise Residential Buildings:** Allows airflow from the top while securing the lower section, ideal for apartments, dormitories, and condos.
@@ -34,5 +33,7 @@ applications: |
   - **Security-Sensitive Zones:** Suitable for buildings where lower window operability poses a risk (e.g., detention centers, laboratories).
   - **Childcare Facilities:** Ensures windows remain safe at ground level in nurseries and play areas while offering passive ventilation.
 
-
 ---
+Designed for safety, ventilation, and architectural versatility.
+
+The Single Hung - Bottom Fixed window features a movable top sash and a fixed lower sash. This configuration is ideal for scenarios where safety, controlled airflow, and minimal obstruction are critical — such as near pools, high balconies, or child-accessible areas.

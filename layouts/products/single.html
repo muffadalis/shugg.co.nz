@@ -22,7 +22,7 @@
 <section id="features" class="features section-tight">
     <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="row">
+        <div class="row  gy-4">
             <div class="col-lg-3">
                 <ul class="nav nav-tabs flex-column">
                     <li class="nav-item">
@@ -43,30 +43,25 @@
                 <div class="tab-content">
                     <div class="tab-pane active show" id="features-tab-1">
                         <div class="row">
-                            <div class="col-lg-8 details order-2 order-lg-1">
+                            <div class="col-lg-12 details order-2 order-lg-1">
                                 {{ .Params.features | markdownify }}
                             </div>
                         </div>
                     </div>
                     <div class="tab-pane" id="features-tab-2">
                         <div class="row">
-                            <div class="col-lg-8 details order-2 order-lg-1">
-                                                               {{ .Params.drawings | markdownify }}
-
+                            <div class="col-lg-12 details order-2 order-lg-1">
+                                {{ partial "product-drawings.html" (dict
+                                "file" "data/drawings.csv"
+                                 "filters" .Params.drawings_filters
+                                ) }}
                             </div>
                         </div>
                     </div>
                     <div class="tab-pane" id="features-tab-3">
                         <div class="row">
                             <div class="col-lg-8 details order-2 order-lg-1">
-                                <h3>Impedit facilis occaecati odio neque aperiam sit</h3>
-                                <p class="fst-italic">Eos voluptatibus quo. Odio similique illum id quidem non enim
-                                    fuga. Qui natus non sunt dicta dolor et. In asperiores velit quaerat perferendis aut
-                                </p>
-                                <p>Iure officiis odit rerum. Harum sequi eum illum corrupti culpa veritatis quisquam.
-                                    Neque necessitatibus illo rerum eum ut. Commodi ipsam minima molestiae sed
-                                    laboriosam a iste odio. Earum odit nesciunt fugiat sit ullam. Soluta et harum
-                                    voluptatem optio quae</p>
+                                {{ partial "product-configurations.html" . }}
                             </div>
                             <div class="col-lg-4 text-center order-1 order-lg-2">
                                 <img src="assets/img/tabs/tab-3.png" alt="" class="img-fluid">
@@ -75,7 +70,7 @@
                     </div>
                     <div class="tab-pane" id="features-tab-4">
                         <div class="row">
-                            <div class="col-lg-8 details order-2 order-lg-1">
+                            <div class="col-lg-12 details order-2 order-lg-1">
                                 {{ .Params.applications | markdownify }}
                             </div>
                         </div>

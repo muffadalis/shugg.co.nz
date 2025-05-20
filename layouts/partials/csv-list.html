@@ -1,0 +1,115 @@
+{{ $file := .file }}
+{{ $filters := .filters }}
+{{ $columns := .columns }}
+{{ $res := resources.Get $file }}
+{{ $csv := $res | transform.Unmarshal }}
+
+{{ if not (and $res $csv) }}
+  <p><strong>Error:</strong> Failed to load or parse CSV file <code>{{ $file }}</code>.</p>
+{{ else }}
+
+  {{ $headers := index $csv 0 }}
+
+  <!-- Build map of column names to indexes -->
+  {{ $colIndexes := dict }}
+  {{ range $i, $h := $headers }}
+    {{ $colIndexes = merge $colIndexes (dict (lower $h) $i) }}
+  {{ end }}
+
+  <!-- Build the selected column list with indexes -->
+  {{ $selectedCols := slice }}
+  {{ range $columns }}
+    {{ $colName := . }}
+    {{ $key := lower $colName }}
+    {{ if isset $colIndexes $key }}
+        {{ $idx := index $colIndexes $key }}
+        {{ $selectedCols = $selectedCols | append (dict "name" $colName "index" $idx) }}
+    {{ else }}
+        <p style="color:red;">Missing column in CSV: <code>{{ $colName }}</code></p>
+    {{ end }}
+  {{ end }}
+
+  <!-- Group rows by FrameMaterial -->
+  {{ $frameIndex := index $colIndexes "framematerial" }}
+  {{ $groups := dict }}
+
+  {{ range $i, $row := $csv }}
+    {{ if ne $i 0 }}
+      {{ $match := true }}
+      {{ if $filters }}
+        {{ range $key, $val := $filters }}
+          {{ $index := index $colIndexes (lower $key) }}
+          {{ $cell := lower (trim (index $row $index) " ") }}
+          {{ if or (not (isset $colIndexes (lower $key))) (ne $cell (lower (trim $val " "))) }}
+            {{ $match = false }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+
+      {{ if $match }}
+        {{ $groupKey := index $row $frameIndex | default "Unknown" }}
+        {{ $existing := index $groups $groupKey }}
+        {{ if $existing }}
+          {{ $groups = merge $groups (dict $groupKey (append $existing $row)) }}
+        {{ else }}
+          {{ $groups = merge $groups (dict $groupKey (slice $row)) }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+
+  <input type="text" id="filterInput" placeholder="Filter by any field..." style="margin-bottom: 1em; width: 100%; padding: 8px; font-size: 1em;">
+
+  <div id="groupContainer">
+  {{ range $groupName, $rows := $groups }}
+    <div class="group" data-group="{{ $groupName }}">
+      <h3>{{ $groupName }}</h3>
+      <ul>
+        {{ range $row := $rows }}
+          <li class="item" data-text="{{ $values := slice }}{{ range $selectedCols }}{{ $values = $values | append (index $row .index) }}{{ end }}{{ delimit $values " " | lower }}">
+            {{ range $selectedCols }}
+                {{ $value := index $row .index }}
+                  {{ $value }}
+            
+              <!-- <span class="col-{{ .name | urlize }}">
+                {{ $value := index $row .index }}
+                {{ if or (hasPrefix $value "http") (strings.HasSuffix $value ".pdf") (strings.HasSuffix $value ".dwg") }}
+                  <a href="{{ $value | relURL }}" target="_blank" rel="noopener">Download</a>
+                {{ else }}
+                  {{ $value }}
+                {{ end }}
+              </span> -->
+            {{ end }}
+          </li>
+        {{ end }}
+      </ul>
+    </div>
+  {{ end }}
+  </div>
+
+  <script>
+    (() => {
+      const input = document.getElementById('filterInput');
+      const groups = document.querySelectorAll('#groupContainer .group');
+
+      input.addEventListener('input', () => {
+        const filter = input.value.toLowerCase().trim();
+
+        groups.forEach(group => {
+          let anyVisible = false;
+          const items = group.querySelectorAll('li.item');
+
+          items.forEach(item => {
+            const text = item.getAttribute('data-text');
+            const match = text.includes(filter);
+            item.style.display = match ? '' : 'none';
+            if (match) anyVisible = true;
+          });
+
+          group.style.display = anyVisible ? '' : 'none';
+        });
+      });
+    })();
+  </script>
+
+{{ end }}
