@@ -9,13 +9,6 @@
     <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>2 Panel Single Glazed Double Hung</title>
-      <link>http://localhost:1313/products/2-panel-double-hung/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/products/2-panel-double-hung/</guid>
-      <description>&lt;p&gt;Designed for safety, ventilation, and architectural versatility.&lt;/p&gt;&#xA;&lt;p&gt;The Single Hung - Bottom Fixed window features a movable top sash and a fixed lower sash. This configuration is ideal for scenarios where safety, controlled airflow, and minimal obstruction are critical — such as near pools, high balconies, or child-accessible areas.&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>About</title>
       <link>http://localhost:1313/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -23,11 +16,39 @@
       <description></description>
     </item>
     <item>
+      <title>Double Hung 2 Panel</title>
+      <link>http://localhost:1313/products/double-hung-2-panel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/products/double-hung-2-panel/</guid>
+      <description>&lt;p&gt;Designed for safety, ventilation, and architectural versatility.&lt;/p&gt;&#xA;&lt;p&gt;The Single Hung - Bottom Fixed window features a movable top sash and a fixed lower sash. This configuration is ideal for scenarios where safety, controlled airflow, and minimal obstruction are critical — such as near pools, high balconies, or child-accessible areas.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Double Hung 4 Panel</title>
+      <link>http://localhost:1313/products/double-hung-4-panel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/products/double-hung-4-panel/</guid>
+      <description>&lt;p&gt;The 4 Panel Single Glazed Double Hung Vertical Sliding Window offers a classic aesthetic combined with practical functionality, making it ideal for both traditional and contemporary architectural styles.&lt;/p&gt;&#xA;&lt;p&gt;Designed for enhanced ventilation, ease of operation, and minimal maintenance, this vertical sliding window is a versatile solution for residential and light commercial applications.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Services</title>
       <link>http://localhost:1313/services/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/services/</guid>
       <description></description>
+    </item>
+    <item>
+      <title>Single Hung 2 Panel</title>
+      <link>http://localhost:1313/products/single-hung-2-panel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/products/single-hung-2-panel/</guid>
+      <description>&lt;p&gt;This window design is especially effective in residential, institutional, and commercial applications where upper-only airflow is desired, without compromising security or safety.&lt;/p&gt;&#xA;&lt;p&gt;The Single Hung - Bottom Fixed window features a movable top sash and a fixed lower sash. This configuration is ideal for scenarios where safety, controlled airflow, and minimal obstruction are critical — such as near pools, high balconies, or child-accessible areas.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Single Hung 3 Panel</title>
+      <link>http://localhost:1313/products/single-hung-3-panel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/products/single-hung-3-panel/</guid>
+      <description>&lt;p&gt;Designed for safety, ventilation, and architectural versatility.&lt;/p&gt;&#xA;&lt;p&gt;The Single Hung - Bottom Fixed window features a movable top sash and a fixed lower sash. This configuration is ideal for scenarios where safety, controlled airflow, and minimal obstruction are critical — such as near pools, high balconies, or child-accessible areas.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

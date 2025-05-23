@@ -1,28 +1,27 @@
-{{ define "main"}}
+{{ define "main" }}
 <section id="services" class="services section">
 
     <div class="container">
 
-        <div class="row gy-4">
+        <div class="row gy-3">
             {{ range .Pages }}
-            <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-                <div class="service-item d-flex align-items-start position-relative h-100">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-item d-flex align-items-center position-relative" style="padding: 0.8rem;">
                     {{ with .Params.image }}
                     <img class="flex-shrink-0 me-3" src="{{ . | relURL }}" alt="{{ $.Title }}" height="100">
                     {{ end }}
-                    <div>
-                        <h4 class="title">
+                    <div class="d-flex flex-column justify-content-center w-100">
+                        <h4 class="title mb-1">
                             <a href="{{ .RelPermalink }}" class="stretched-link">{{ .Title }}</a>
                         </h4>
-                        <p>{{ .Params.description }}</p>
+                        <p class="mb-0 small">{{ .Params.description }}</p>
                     </div>
                 </div>
             </div>
             {{ end }}
-
         </div>
 
     </div>
 
 </section><!-- /Services Section -->
-{{end }}
+{{ end }}

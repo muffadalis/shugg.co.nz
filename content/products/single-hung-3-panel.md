@@ -1,7 +1,7 @@
 ---
-title: "2 Panel Single Glazed Double Hung"
+title: "Single Hung 3 Panel"
 description: ""
-image: "/assets/img/products/DH.png"
+image: "/assets/img/products/SH_BF.png"
 
 features: |
   - **Top Sash Operability:** The upper pane slides vertically downward, allowing ventilation while keeping the bottom area sealed — perfect for preventing falls or water intrusion.
@@ -14,15 +14,18 @@ features: |
   This window design is especially effective in residential, institutional, and commercial applications where upper-only airflow is desired, without compromising security or safety.
 
 
-drawings_filters:
-  Style: "Double Hung"
-  NoOfPanes: "2"
+drawings:
+  Style: "Single Hung"
+  NoOfPanes: "3"
 
 configurations:
-  - name: "4 Panel Double Hung"
-    image: "/assets/img/products/DH.png"
-    url: "/products/2-panel-double-hung"
-    
+  - name: "Top Fixed"
+    image: "/assets/img/products/SH_TF.png"
+  - name: "Bottom Fixed"
+    image: "/assets/img/products/SH_BF.png"
+  - name: "Three Pane"
+    image: "/assets/img/products/SH_BF.png"    
+
 applications: |
   - **Swimming Pool Enclosures:** Prevents direct access from below while allowing upper ventilation, enhancing child safety and compliance with pool barrier regulations.
   - **High-Rise Residential Buildings:** Allows airflow from the top while securing the lower section, ideal for apartments, dormitories, and condos.

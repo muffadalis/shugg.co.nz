@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dynamic Window Configs</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            font-family: sans-serif;
+        }
+
+        /* background: rgba(135, 206, 250, 0.3); */
+
+        .window-container {
+
+            position: relative;
+            width: 400px;
+            height: 340px;
+            border: 4px solid #ccc;
+            overflow: hidden;
+            /* background-image: url('sc_1716853939_1158195_12.jpeg'); */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .pane {
+            position: absolute;
+            width: 100%;
+            background: rgba(135, 206, 250, 0.3);
+            /* translucent glass */
+            backdrop-filter: saturate(130%);
+            -webkit-backdrop-filter: saturate(120%);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(100, 100, 255, 0.4);
+            /* soft glass-style border */
+            box-sizing: border-box;
+            /* Ensures border doesn't overflow container */
+            transition: transform 0.5s ease, z-index 0.5s ease;
+        }
+
+
+        /* === 1. SH_BF === */
+        .window-container[data-mode="SH_BF"] .pane {
+            height: 170px;
+        }
+
+        .window-container[data-mode="SH_BF"] .pane[data-pos="1"] {
+            top: 0;
+            z-index: 2;
+        }
+
+        .window-container[data-mode="SH_BF"] .pane[data-pos="2"] {
+            top: 170px;
+            z-index: 1;
+        }
+
+        .window-container[data-mode="SH_BF"]:hover .pane[data-pos="1"] {
+            transform: translateY(170px);
+            z-index: 0;
+        }
+
+        /* === 2. SH_TF === */
+        .window-container[data-mode="SH_TF"] .pane {
+            height: 170px;
+        }
+
+        .window-container[data-mode="SH_TF"] .pane[data-pos="1"] {
+            top: 0;
+            z-index: 1;
+        }
+
+        .window-container[data-mode="SH_TF"] .pane[data-pos="2"] {
+            top: 170px;
+            z-index: 2;
+        }
+
+        .window-container[data-mode="SH_TF"]:hover .pane[data-pos="2"] {
+            transform: translateY(-170px);
+            z-index: 0;
+        }
+
+        /* === 3. DH_4Pane === */
+        .window-container[data-mode="DH_4Pane"] .pane {
+            height: 85px;
+        }
+
+        .window-container[data-mode="DH_4Pane"] .pane[data-pos="1"] {
+            top: 0;
+        }
+
+        .window-container[data-mode="DH_4Pane"] .pane[data-pos="2"] {
+            top: 85px;
+            z-index: 2;
+        }
+
+        .window-container[data-mode="DH_4Pane"] .pane[data-pos="3"] {
+            top: 170px;
+            z-index: 2;
+        }
+
+        .window-container[data-mode="DH_4Pane"] .pane[data-pos="4"] {
+            top: 255px;
+        }
+
+        .window-container[data-mode="DH_4Pane"]:hover .pane[data-pos="2"] {
+            transform: translateY(-85px);
+        }
+
+        .window-container[data-mode="DH_4Pane"]:hover .pane[data-pos="3"] {
+            transform: translateY(85px);
+        }
+
+        /* === 4. DH === */
+        .window-container[data-mode="DH"] .pane {
+            height: 170px;
+        }
+
+        .window-container[data-mode="DH"] .pane[data-pos="1"] {
+            top: 0;
+        }
+
+        .window-container[data-mode="DH"] .pane[data-pos="2"] {
+            top: 170px;
+        }
+
+        .window-container[data-mode="DH"]:hover .pane[data-pos="1"] {
+            transform: translateY(85px);
+        }
+
+        .window-container[data-mode="DH"]:hover .pane[data-pos="2"] {
+            transform: translateY(-85px);
+        }
+
+        /* === 5. DH_3Pane === */
+        .window-container[data-mode="DH_3Pane"] .pane {
+            height: 113.33px;
+        }
+
+        .window-container[data-mode="DH_3Pane"] .pane[data-pos="1"] {
+            top: 0;
+            z-index: 2;
+        }
+
+        .window-container[data-mode="DH_3Pane"] .pane[data-pos="2"] {
+            top: 113.33px;
+            z-index: 2;
+        }
+
+        .window-container[data-mode="DH_3Pane"] .pane[data-pos="3"] {
+            top: 226.66px;
+        }
+
+        .window-container[data-mode="DH_3Pane"]:hover .pane[data-pos="1"] {
+            transform: translateY(56.67px);
+        }
+
+        .window-container[data-mode="DH_3Pane"]:hover .pane[data-pos="2"] {
+            transform: translateY(-56.67px);
+        }
+
+
+        /* === 6. Middle Slide Down (3-pane) === */
+        .window-container[data-mode="SH_3Pane_BF"] .pane {
+            height: 113.33px;
+        }
+
+        .window-container[data-mode="SH_3Pane_BF"] .pane[data-pos="1"] {
+            top: 0;
+            z-index: 1;
+        }
+
+        .window-container[data-mode="SH_3Pane_BF"] .pane[data-pos="2"] {
+            top: 113.33px;
+            z-index: 2;
+        }
+
+        .window-container[data-mode="SH_3Pane_BF"] .pane[data-pos="3"] {
+            top: 226.66px;
+            z-index: 1;
+        }
+
+        .window-container[data-mode="SH_3Pane_BF"]:hover .pane[data-pos="2"] {
+            transform: translateY(113.33px);
+            /* Slides down by one pane height */
+        }
+
+
+        /* === 7. Arched Top, Bottom Slides Up === */
+        /* Top arched blackout pane */
+        .window-container[data-mode="Custom_SH_TF"] .pane[data-pos="arch-bg"] {
+            height: 170px;
+            top: 0;
+            backdrop-filter: saturate(120%);
+            background-image: url('custom-semicircle.png');
+            /* Update path if needed */
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            z-index: 0;
+        }
+
+        /* Blackout top pane with semi-circle cutout */
+        .window-container[data-mode="Custom_SH_TF"] .pane[data-pos="1"] {
+            height: 170px;
+            top: 0;
+            z-index: 2;
+        }
+
+        /* Bottom sliding pane */
+        .window-container[data-mode="Custom_SH_TF"] .pane[data-pos="2"] {
+            bottom: 0;
+            height: 170px;
+            z-index: 1;
+        }
+
+        .window-container[data-mode="Custom_SH_TF"]:hover .pane[data-pos="2"] {
+            transform: translateY(-170px);
+        }
+
+        .window-container.wide {
+            width: 600px;
+        }
+
+        /* === 8. Remote Controlled SH_TF (2-pane) === */
+        .window-container[data-mode="remote-SH_TF"] .pane {
+            height: 170px;
+        }
+
+        .window-container[data-mode="remote-SH_TF"] .pane[data-pos="1"] {
+            top: 0;
+            z-index: 1;
+        }
+
+        .window-container[data-mode="remote-SH_TF"] .pane[data-pos="2"] {
+            top: 170px;
+            z-index: 2;
+            transition: transform 0.5s ease;
+        }
+
+        .window-container[data-mode="remote-SH_TF"].open .pane[data-pos="2"] {
+            transform: translateY(-170px);
+            z-index: 3;
+        }
+
+        /* Remote button inside container */
+        .window-container[data-mode="remote-SH_TF"] .remote-control-inside {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 5;
+            color: green;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            padding: 8px;
+            transition: color 0.3s ease;
+        }
+
+        .window-container[data-mode="remote-SH_TF"].open .remote-control-inside {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 1. Top pane moves down -->
+    <div class="window-container" data-mode="SH_BF">
+        <div class="pane" data-pos="1"></div>
+        <div class="pane" data-pos="2"></div>
+    </div>
+
+    <!-- 2. Bottom pane moves up -->
+    <div class="window-container" data-mode="SH_TF">
+        <div class="pane" data-pos="1"></div>
+        <div class="pane" data-pos="2"></div>
+    </div>
+
+    <div class="window-container" data-mode="SH_3Pane_BF">
+        <div class="pane" data-pos="1"></div>
+        <div class="pane" data-pos="2"></div>
+        <div class="pane" data-pos="3"></div>
+    </div>
+
+
+    <!-- 3. 4-pane, middle panes move -->
+    <div class="window-container" data-mode="DH_4Pane">
+        <div class="pane" data-pos="1"></div>
+        <div class="pane" data-pos="2"></div>
+        <div class="pane" data-pos="3"></div>
+        <div class="pane" data-pos="4"></div>
+    </div>
+
+    <!-- 4. 2-pane, both meet in middle -->
+    <div class="window-container" data-mode="DH">
+        <div class="pane" data-pos="1"></div>
+        <div class="pane" data-pos="2"></div>
+    </div>
+
+    <!-- 5. 3-pane, top 2 meet in middle, bottom fixed -->
+    <div class="window-container" data-mode="DH_3Pane">
+        <div class="pane" data-pos="1"></div>
+        <div class="pane" data-pos="2"></div>
+        <div class="pane" data-pos="3"></div>
+    </div>
+
+    <div class="window-container" data-mode="Custom_SH_TF">
+        <!-- Decorative semicircle background pane -->
+        <div class="pane decorative-pane" data-pos="arch-bg"></div>
+
+        <!-- Blackout pane with arch cutout -->
+        <div class="pane" data-pos="1"></div>
+
+        <!-- Bottom sliding pane -->
+        <div class="pane" data-pos="2"></div>
+    </div>
+
+    <div class="window-container wide" data-mode="SH_BF">
+        <div class="pane" data-pos="1"></div> <!-- Top pane (slides down) -->
+        <div class="pane" data-pos="2"></div> <!-- Bottom pane (fixed) -->
+    </div>
+
+
+    <div class="window-container wide" data-mode="DH_4Pane">
+        <div class="pane" data-pos="1"></div> <!-- Top fixed -->
+        <div class="pane" data-pos="2"></div> <!-- Slides up -->
+        <div class="pane" data-pos="3"></div> <!-- Slides down -->
+        <div class="pane" data-pos="4"></div> <!-- Bottom fixed -->
+    </div>
+
+    <div class="window-container" data-mode="remote-SH_TF" id="remote-window">
+        <!-- Remote icon inside -->
+        <div class="remote-control-inside remote-toggle" id="remote-trigger">
+            <span class="mdi mdi-remote" id="remote-icon"></span>
+        </div>
+
+        <!-- Top fixed pane -->
+        <div class="pane" data-pos="1"></div>
+
+        <!-- Bottom sliding pane -->
+        <div class="pane" data-pos="2"></div>
+    </div>
+
+    </div>
+
+</body>
+
+<script>
+    const remoteTrigger = document.getElementById('remote-trigger');
+    const remoteWindow = document.getElementById('remote-window');
+
+    remoteTrigger.addEventListener('click', () => {
+        remoteWindow.classList.toggle('open');
+    });
+</script>
+
+</html>
