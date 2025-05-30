@@ -32,7 +32,7 @@ jobs:
           extended: true # if you use Hugo extended for SCSS/SASS
 
       - name: Build Hugo site
-        run: hugo --minify --config hugo.toml,hugo.production.toml
+        run: hugo --minify --baseURL="https://muffadalis.github.io/shugg.co.nz/"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
