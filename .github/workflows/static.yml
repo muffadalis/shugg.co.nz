@@ -1,5 +1,5 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+name: Build and Deploy Hugo site to GitHub Pages
+
 on:
   push:
     branches: ["main"]
@@ -15,10 +15,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -28,20 +25,29 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: '0.147.3' # specify latest stable or your desired version
-          extended: true # if you use Hugo extended for SCSS/SASS
+          hugo-version: '0.147.3'
+          extended: true
 
       - name: Build Hugo site
         run: hugo --minify --baseURL="https://muffadalis.github.io/shugg.co.nz/"
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: public
-          
       - name: List build output
         run: ls -R public
 
+      - name: Upload artifact
+        id: upload
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
