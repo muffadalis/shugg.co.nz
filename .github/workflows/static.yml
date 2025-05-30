@@ -38,6 +38,9 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: public
+          
+      - name: List build output
+        run: ls -R public
 
       - name: Deploy to GitHub Pages
         id: deployment
