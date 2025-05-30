@@ -1,11 +1,13 @@
 ---
 title: "Single Hung 2 Panel"
 description: ""
-image: "/assets/img/products/SH_BF.png"
+image:
+  - "/assets/img/products/SH_BF.png"
+  - "/assets/img/products/SH_TF.png"
 
 features: |
   - **Top Sash Operability:** The upper pane slides vertically downward, allowing ventilation while keeping the bottom area sealed — perfect for preventing falls or water intrusion.
-  - **Fixed Bottom Panel:** The bottom sash remains immobile, offering structural integrity and preventing access from lower sections — enhancing security and child safety.
+  - **Fixed Panel as Balustrade**: Bottom fixed glass can be structurally rated to serve as a compliant balustrade in lieu of external barriers.
   - **Slim, Modern Profile:** Clean lines and a minimalistic frame support contemporary architectural styles and unobstructed views.
   - **Weather Sealing:** Advanced perimeter sealing ensures resistance to air and water infiltration, even in harsh conditions.
   - **Low Maintenance:** Fewer moving parts and a fixed lower section reduce mechanical wear and make cleaning easier.
@@ -17,11 +19,20 @@ drawings:
 
 configurations:
   - name: "Top Fixed"
-    image: "/assets/img/products/SH_TF.png"
+    partial: "SH_TF"
   - name: "Bottom Fixed"
-    image: "/assets/img/products/SH_BF.png"
-  - name: "Three Pane"
-    image: "/assets/img/products/SH_BF.png"    
+    partial: "SH_BF"
+  - name: "Balustrade"
+    partial: "SH_BF"
+  - name: "3 Pane"
+    partial: "SH_3Pane_BF"
+  - name: "Super Shugg"
+    partial: "SH_BF"
+    wide: true
+  - name: "Custom Design"
+    partial: "SH_TF"
+    custom: true
+
 applications: |
   - **Swimming Pool Enclosures:** Prevents direct access from below while allowing upper ventilation, enhancing child safety and compliance with pool barrier regulations.
   - **High-Rise Residential Buildings:** Allows airflow from the top while securing the lower section, ideal for apartments, dormitories, and condos.
@@ -33,6 +44,7 @@ applications: |
   - **Childcare Facilities:** Ensures windows remain safe at ground level in nurseries and play areas while offering passive ventilation.
 
 ---
+## Overview
 This window design is especially effective in residential, institutional, and commercial applications where upper-only airflow is desired, without compromising security or safety.
 
 The Single Hung - Bottom Fixed window features a movable top sash and a fixed lower sash. This configuration is ideal for scenarios where safety, controlled airflow, and minimal obstruction are critical — such as near pools, high balconies, or child-accessible areas.

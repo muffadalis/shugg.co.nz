@@ -1,7 +1,8 @@
 ---
 title: "Single Hung 3 Panel"
 description: ""
-image: "/assets/img/products/SH_BF.png"
+image:
+  - "/assets/img/products/3SH_T.png"
 
 features: |
   - **Top Sash Operability:** The upper pane slides vertically downward, allowing ventilation while keeping the bottom area sealed — perfect for preventing falls or water intrusion.
@@ -20,11 +21,19 @@ drawings:
 
 configurations:
   - name: "Top Fixed"
-    image: "/assets/img/products/SH_TF.png"
+    partial: "SH_TF"
   - name: "Bottom Fixed"
-    image: "/assets/img/products/SH_BF.png"
-  - name: "Three Pane"
-    image: "/assets/img/products/SH_BF.png"    
+    partial: "SH_BF"
+  - name: "Balustrade"
+    partial: "SH_BF"
+  - name: "3 Pane"
+    partial: "SH_3Pane_BF"
+  - name: "Super Shugg"
+    partial: "SH_BF"
+    wide: true
+  - name: "Custom Design"
+    partial: "SH_TF"
+    custom: true
 
 applications: |
   - **Swimming Pool Enclosures:** Prevents direct access from below while allowing upper ventilation, enhancing child safety and compliance with pool barrier regulations.

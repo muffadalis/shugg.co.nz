@@ -1,17 +1,19 @@
 ---
 title: "Double Hung 2 Panel"
 description: ""
-image: "/assets/img/products/2DH.png"
+image:
+  - "/assets/img/products/2DH.png"
 
 features: |
-  - **Top Sash Operability:** The upper pane slides vertically downward, allowing ventilation while keeping the bottom area sealed — perfect for preventing falls or water intrusion.
-  - **Fixed Bottom Panel:** The bottom sash remains immobile, offering structural integrity and preventing access from lower sections — enhancing security and child safety.
-  - **Slim, Modern Profile:** Clean lines and a minimalistic frame support contemporary architectural styles and unobstructed views.
-  - **Weather Sealing:** Advanced perimeter sealing ensures resistance to air and water infiltration, even in harsh conditions.
-  - **Low Maintenance:** Fewer moving parts and a fixed lower section reduce mechanical wear and make cleaning easier.
-  - **Customizable Sizes & Finishes:** Available in a wide range of frame colors, hardware finishes, and dimensions to suit your project.
+  - **Sashless Design**: No bulky frames between panes; offers uninterrupted views and a minimalist appearance.
+  - **Double Hung Functionality**: Both the top and bottom glass panes slide vertically for flexible ventilation.
+  - **Counterbalance Mechanism**: Smooth, balanced sliding action; panes remain in position without locks.
+  - **Slimline Framing**: Narrow aluminum or uPVC perimeter frame maximizes glass area and natural light.
+  - **Clear, Tinted or Laminated Glass Options**: Customizable to meet privacy, acoustic, and energy requirements.
+  - **Integrated Seals & Weather Stripping**: Ensures air and water tightness, even under adverse conditions.
+  - **Safety Features**: Optional restrictors and toughened/laminated safety glass compliant with building codes.
+  - **Custom Sizes & Configurations**: Manufactured to fit project-specific dimensions and opening requirements.
 
-  This window design is especially effective in residential, institutional, and commercial applications where upper-only airflow is desired, without compromising security or safety.
 
 
 drawings:
@@ -19,21 +21,33 @@ drawings:
   NoOfPanes: "2"
 
 configurations:
-  - name: "4 Panel Double Hung"
-    image: "/assets/img/products/4DH.png"
-    url: "/products/2-panel-double-hung"
+  - name: "4 Panel"
+    partial: "DH_4Pane"
+  - name: "3 Panel"
+    partial: "DH_3Pane"
+  - name: "2 Panel"
+    partial: "DH"
+  - name: "Super Shugg"
+    partial: "DH_4Pane"
+    wide: true
+  - name: "Custom Design"
+    partial: "DH_4Pane"
+    custom: true
     
 applications: |
-  - **Swimming Pool Enclosures:** Prevents direct access from below while allowing upper ventilation, enhancing child safety and compliance with pool barrier regulations.
-  - **High-Rise Residential Buildings:** Allows airflow from the top while securing the lower section, ideal for apartments, dormitories, and condos.
-  - **Healthcare Facilities:** Enhances patient safety by restricting lower access, yet enables air circulation in wards and recovery rooms.
-  - **Educational Institutions:** Used in classrooms to improve ventilation without the risk of students tampering with lower sashes.
-  - **Commercial Storefronts:** Provides ventilation above eye level without disrupting display setups or inviting unauthorized access.
-  - **Nursing Homes & Assisted Living:** Prioritizes occupant safety with fixed lower panes, while still supporting fresh air circulation.
-  - **Security-Sensitive Zones:** Suitable for buildings where lower window operability poses a risk (e.g., detention centers, laboratories).
-  - **Childcare Facilities:** Ensures windows remain safe at ground level in nurseries and play areas while offering passive ventilation.
+  #### Residential
+  - **Modern Homes**: Ideal for designs that emphasize clean lines and expansive views.
+  - **Heritage Renovations**: Preserves vertical sliding function with a contemporary twist.
+  - **Kitchens & Bathrooms**: Provides effective ventilation without projecting into exterior or interior spaces.
+  - **Multi-story Houses**: Enhances façade aesthetics while meeting egress and ventilation standards.
 
+  #### Commercial
+  - **Retail & Hospitality Frontages**: Unobstructed sightlines ideal for cafes, shops, and restaurants.
+  - **Apartments & High-Rises**: Optimizes ventilation and natural light without encroaching on balcony space.
+  - **Office Buildings**: Supports energy-efficient designs with controllable airflow and daylight access.
+  - **Schools & Institutions**: Safe and practical ventilation for classrooms and common areas.
 ---
-Designed for safety, ventilation, and architectural versatility.
+## Overview
+The Double Hung Sashless Vertical Moving Window is a sleek, modern window system designed to provide maximum ventilation, uninterrupted views, and minimalist aesthetics. 
 
-The Single Hung - Bottom Fixed window features a movable top sash and a fixed lower sash. This configuration is ideal for scenarios where safety, controlled airflow, and minimal obstruction are critical — such as near pools, high balconies, or child-accessible areas.
+By eliminating traditional sashes, it delivers a seamless glass-to-glass look while still allowing two operable panes to slide vertically in a counterbalanced system.
