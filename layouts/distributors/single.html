@@ -1,0 +1,68 @@
+{{ define "main" }}
+
+<section class="distributors">
+  <div class="container">
+    <!-- Filters -->
+    <div class="row mb-3">
+      <div class="col-md-4">
+        <label for="islandFilter" class="form-label fw-bold">Filter by Island:</label>
+        <select id="islandFilter" class="form-select">
+          <option value="All">All</option>
+          <option value="North">North Island</option>
+          <option value="South">South Island</option>
+        </select>
+      </div>
+      <div class="col-md-4">
+        <label for="citySearch" class="form-label fw-bold">Search by City:</label>
+        <input type="text" id="citySearch" class="form-control" placeholder="Enter city name">
+      </div>
+    </div>
+
+    <!-- Table -->
+    {{ $csv := resources.Get "data/distributors.csv" | transform.Unmarshal }}
+    <table class="table table-striped" id="distributorTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>City</th>
+          <th>Island</th>
+        </tr>
+      </thead>
+       <tbody>
+    {{ range $i, $row := $csv }}
+      {{ if gt $i 0 }}  {{/* Skip the header row (index 0) */}}
+        <tr>
+          <td>{{ index $row 0 }}</td>
+          <td>{{ index $row 1 }}</td>
+          <td>{{ index $row 2 }}</td>
+        </tr>
+      {{ end }}
+    {{ end }}
+  </tbody>
+    </table>
+  </div>
+
+  <!-- JS Filtering -->
+  <script>
+    const islandFilter = document.getElementById('islandFilter');
+    const citySearch = document.getElementById('citySearch');
+    const rows = document.querySelectorAll('#distributorTable tbody tr');
+
+    function filterTable() {
+      const island = islandFilter.value;
+      const city = citySearch.value.toLowerCase().trim();
+
+      rows.forEach(row => {
+        const rowIsland = row.getAttribute('data-island');
+        const rowCity = row.getAttribute('data-city');
+        const show = (island === 'All' || rowIsland === island) && rowCity.includes(city);
+        row.style.display = show ? '' : 'none';
+      });
+    }
+
+    islandFilter.addEventListener('change', filterTable);
+    citySearch.addEventListener('input', filterTable);
+  </script>
+</section>
+
+{{ end }}
