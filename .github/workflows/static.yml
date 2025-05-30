@@ -32,7 +32,7 @@ jobs:
           extended: true # if you use Hugo extended for SCSS/SASS
 
       - name: Build Hugo site
-        run: hugo --minify
+        run: hugo --minify --config hugo.toml,hugo.production.toml
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
