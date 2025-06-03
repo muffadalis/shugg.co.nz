@@ -1,71 +1,69 @@
 {{ define "main" }}
 <!-- Service Details Section -->
 <section id="service-details" class="service-details section-tight">
-  <div class="container">
-    <div class="row gy-4">
-      <div class="col-lg-12" data-aos="fade-up" data-aos-delay="200">
+    <div class="container">
+        <div class="row gy-4">
+            <div class="col-lg-12" data-aos="fade-up" data-aos-delay="200">
 
-        {{ range .Params.image }}
-          <img src="{{ . | relURL }}" alt="{{ $.Title }}" class="img-fluid mb-3 float-start me-4" width="120">
-        {{ end }}
+                {{ range .Params.image }}
+                <img src="{{ . | relURL }}" alt="{{ $.Title }}" class="img-fluid mb-3 float-start me-4" width="120">
+                {{ end }}
 
-        <div class="service-description">
-          {{ .Content }}
+                <div class="service-description">
+                    {{ .Content }}
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </section><!-- /Service Details Section -->
-
 
 <!-- Features Section -->
 <section id="features" class="features section-tight">
     <div class="container" data-aos="fade-up" data-aos-delay="100">
-
         <div class="row  gy-4 d-print-none">
             <div class="col-lg-3">
                 <ul class="nav nav-tabs flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active show" data-bs-toggle="tab" href="#features">Features</a>
+                        <a class="nav-link active show" data-bs-toggle="tab" href="#features-tab">Features</a>
                     </li>
                     <!-- <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="tab" href="#drawings">Technical Drawings</a>
+                        <a class="nav-link" data-bs-toggle="tab" href="#drawings-tab">Technical Drawings</a>
                     </li> -->
                     <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="tab" href="#configurations">Configurations</a>
+                        <a class="nav-link" data-bs-toggle="tab" href="#configurations-tab">Configurations</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="tab" href="#applications">Applications</a>
+                        <a class="nav-link" data-bs-toggle="tab" href="#applications-tab">Applications</a>
                     </li>
                 </ul>
             </div>
             <div class="col-lg-9 mt-4 mt-lg-0">
                 <div class="tab-content">
-                    <div class="tab-pane active show" id="features">
+                    <div class="tab-pane active show" id="features-tab">
                         <div class="row">
                             <div class="col-lg-12 details order-2 order-lg-1">
                                 {{ .Params.features | markdownify }}
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane d-print-none" id="drawings">
+                    <div class="tab-pane" id="drawing-tabs">
                         <div class="row">
                             <div class="col-lg-12 details order-2 order-lg-1">
                                 {{ partial "product-drawings.html" (dict
                                 "file" "data/drawings.csv"
-                                 "filters" .Params.drawings
+                                "filters" .Params.drawings
                                 ) }}
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane d-print-none" id="configurations">
+                    <div class="tab-pane" id="configurations-tab">
                         <div class="row">
                             <div class="col-lg-12 details order-2 order-lg-1">
                                 {{ partial "product-configurations.html" . }}
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane" id="applications">
+                    <div class="tab-pane" id="applications-tab">
                         <div class="row">
                             <div class="col-lg-12 details order-2 order-lg-1">
                                 {{ .Params.applications | markdownify }}
