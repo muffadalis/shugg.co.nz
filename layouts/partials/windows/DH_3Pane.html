@@ -1,6 +1,11 @@
-    <!-- 5. 3-pane, top 2 meet in middle, bottom fixed -->
-    <div class="window-container{{ if .wide }} wide{{ end }}" data-mode="DH_3Pane">
-        <div class="pane" data-pos="1"></div>
-        <div class="pane" data-pos="2"></div>
-        <div class="pane" data-pos="3"></div>
+<!-- 5. 3-pane, top 2 meet in middle, bottom fixed -->
+<div class="window-container{{ if .wide }} wide{{ end }}" data-mode="DH_3Pane">
+    {{ if .motorised }}
+    <div class="motorised">
+        <span class="mdi mdi-remote"></span>
     </div>
+    {{ end }}
+    <div class="pane" data-pos="1"></div>
+    <div class="pane" data-pos="2"></div>
+    <div class="pane" data-pos="3"></div>
+</div>

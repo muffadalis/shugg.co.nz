@@ -26,29 +26,29 @@
             <div class="col-lg-3">
                 <ul class="nav nav-tabs flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active show" data-bs-toggle="tab" href="#features-tab-1">Features</a>
+                        <a class="nav-link active show" data-bs-toggle="tab" href="#features">Features</a>
                     </li>
                     <!-- <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="tab" href="#features-tab-2">Technical Drawings</a>
+                        <a class="nav-link" data-bs-toggle="tab" href="#drawings">Technical Drawings</a>
                     </li> -->
                     <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="tab" href="#features-tab-3">Configurations</a>
+                        <a class="nav-link" data-bs-toggle="tab" href="#configurations">Configurations</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="tab" href="#features-tab-4">Applications</a>
+                        <a class="nav-link" data-bs-toggle="tab" href="#applications">Applications</a>
                     </li>
                 </ul>
             </div>
             <div class="col-lg-9 mt-4 mt-lg-0">
                 <div class="tab-content">
-                    <div class="tab-pane active show" id="features-tab-1">
+                    <div class="tab-pane active show" id="features">
                         <div class="row">
                             <div class="col-lg-12 details order-2 order-lg-1">
                                 {{ .Params.features | markdownify }}
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane d-print-none" id="features-tab-2">
+                    <div class="tab-pane d-print-none" id="drawings">
                         <div class="row">
                             <div class="col-lg-12 details order-2 order-lg-1">
                                 {{ partial "product-drawings.html" (dict
@@ -58,17 +58,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane d-print-none" id="features-tab-3">
+                    <div class="tab-pane d-print-none" id="configurations">
                         <div class="row">
                             <div class="col-lg-12 details order-2 order-lg-1">
                                 {{ partial "product-configurations.html" . }}
                             </div>
-                            <div class="col-lg-4 text-center order-1 order-lg-2">
-                                <img src="assets/img/tabs/tab-3.png" alt="" class="img-fluid">
-                            </div>
                         </div>
                     </div>
-                    <div class="tab-pane" id="features-tab-4">
+                    <div class="tab-pane" id="applications">
                         <div class="row">
                             <div class="col-lg-12 details order-2 order-lg-1">
                                 {{ .Params.applications | markdownify }}

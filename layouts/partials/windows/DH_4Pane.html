@@ -1,7 +1,12 @@
-    <!-- 3. 4-pane, middle panes move -->
-    <div class="window-container{{ if .wide }} wide{{ end }}" data-mode="DH_4Pane">
-        <div class="pane {{ if .custom }} arch{{ end }}" data-pos="1"></div>
-        <div class="pane" data-pos="2"></div>
-        <div class="pane" data-pos="3"></div>
-        <div class="pane" data-pos="4"></div>
+<!-- 3. 4-pane, middle panes move -->
+<div class="window-container{{ if .wide }} wide{{ end }}" data-mode="DH_4Pane">
+    <div class="pane {{ if .custom }} arch{{ end }}" data-pos="1"></div>
+    {{ if .motorised }}
+    <div class="motorised">
+        <span class="mdi mdi-remote"></span>
     </div>
+    {{ end }}
+    <div class="pane" data-pos="2"></div>
+    <div class="pane" data-pos="3"></div>
+    <div class="pane" data-pos="4"></div>
+</div>

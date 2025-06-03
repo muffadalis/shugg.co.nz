@@ -1,4 +1,9 @@
-    <div class="window-container{{ if .wide }} wide{{ end }}" data-mode="SH_BF">
-        <div class="pane" data-pos="1"></div>
-        <div class="pane" data-pos="2"></div>
+<div class="window-container{{ if .wide }} wide{{ end }}" data-mode="SH_BF">
+    {{ if .motorised }}
+    <div class="motorised">
+        <span class="mdi mdi-remote"></span>
     </div>
+    {{ end }}
+    <div class="pane" data-pos="1"></div>
+    <div class="pane" data-pos="2"></div>
+</div>
