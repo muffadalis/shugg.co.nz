@@ -1,0 +1,54 @@
+<div id="factory-closure-banner">
+    ⚠️ Factory closed on 3rd and 4th of July.
+    <button onclick="dismissBanner()" class="dismiss-btn">Dismiss</button>
+</div>
+
+<style>
+    #factory-closure-banner {
+        background-color: #b71c1c;
+        color: white;
+        text-align: center;
+        padding: 12px;
+        font-family: sans-serif;
+    }
+
+    .dismiss-btn {
+        margin-left: 15px;
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        color: white;
+        padding: 5px 10px;
+        cursor: pointer;
+        font-weight: normal;
+        border-radius: 3px;
+    }
+
+    .dismiss-btn:hover {
+        background: rgba(255, 255, 255, 0.3);
+    }
+</style>
+
+<script>
+    const bannerStart = new Date("2025-06-17");
+    const bannerEnd = new Date("2025-07-04");
+    const today = new Date();
+    const bannerDismissed = localStorage.getItem("factoryBannerDismissed");
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const banner = document.getElementById("factory-closure-banner");
+        if (!banner) return;
+        if (today >= bannerStart && today <= bannerEnd) {
+            console.log("Banner is active until", bannerEnd);
+            banner.style.display = "block";
+        } else {
+            console.log("Banner is no longer active.");
+            banner.style.display = "none";
+        }
+    });
+
+    function dismissBanner() {
+        const banner = document.getElementById("factory-closure-banner");
+        if (banner) banner.style.display = "none";
+        localStorage.setItem("factoryBannerDismissed", "true");
+    }
+</script>
