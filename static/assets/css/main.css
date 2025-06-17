@@ -506,11 +506,10 @@ h6 {
 
 .footer .footer-about .logo {
   line-height: 1;
-  margin-bottom: 25px;
 }
 
 .footer .footer-about .logo img {
-  max-height: 40px;
+  max-height: 135px;
   margin-right: 6px;
 }
 
@@ -523,7 +522,7 @@ h6 {
 }
 
 .footer .footer-about p {
-  font-size: 14px;
+  font-size: 15px;
   font-family: var(--heading-font);
 }
 
