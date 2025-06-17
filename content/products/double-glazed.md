@@ -1,6 +1,6 @@
 ---
-title: "Double Glazed Windows"
-description: ""
+title: "Double Glazed"
+description: "Single & Double Hung. Motorised options available"
 image:
   - "/assets/img/products/2DH.png"
   - "/assets/img/products/SH_BF.png"
@@ -18,7 +18,6 @@ features: |
 
 drawings:
   Style: "Double Hung"
-  NoOfPanes: "2"
 
 configurations:
   - name: "Double Hung 4 Panel"

@@ -1,23 +1,21 @@
 ---
-title: "Single Hung 3 Panel"
-description: ""
+title: "Single Hung"
+description: "Single Glazed"
 image:
+  - "/assets/img/products/SH_BF.png"
+  - "/assets/img/products/SH_TF.png"
   - "/assets/img/products/3SH_T.png"
 
 features: |
   - **Top Sash Operability:** The upper pane slides vertically downward, allowing ventilation while keeping the bottom area sealed — perfect for preventing falls or water intrusion.
-  - **Fixed Bottom Panel:** The bottom sash remains immobile, offering structural integrity and preventing access from lower sections — enhancing security and child safety.
+  - **Fixed Panel as Balustrade**: Bottom fixed glass can be structurally rated to serve as a compliant balustrade in lieu of external barriers.
   - **Slim, Modern Profile:** Clean lines and a minimalistic frame support contemporary architectural styles and unobstructed views.
   - **Weather Sealing:** Advanced perimeter sealing ensures resistance to air and water infiltration, even in harsh conditions.
   - **Low Maintenance:** Fewer moving parts and a fixed lower section reduce mechanical wear and make cleaning easier.
   - **Customizable Sizes & Finishes:** Available in a wide range of frame colors, hardware finishes, and dimensions to suit your project.
 
-  This window design is especially effective in residential, institutional, and commercial applications where upper-only airflow is desired, without compromising security or safety.
-
-
 drawings:
   Style: "Single Hung"
-  NoOfPanes: "3"
 
 configurations:
   - name: "Top Fixed"
@@ -46,6 +44,7 @@ applications: |
   - **Childcare Facilities:** Ensures windows remain safe at ground level in nurseries and play areas while offering passive ventilation.
 
 ---
-Designed for safety, ventilation, and architectural versatility.
+## Overview
+This window design is especially effective in residential, institutional, and commercial applications where upper-only airflow is desired, without compromising security or safety.
 
 The Single Hung - Bottom Fixed window features a movable top sash and a fixed lower sash. This configuration is ideal for scenarios where safety, controlled airflow, and minimal obstruction are critical — such as near pools, high balconies, or child-accessible areas.

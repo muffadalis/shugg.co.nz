@@ -4,190 +4,191 @@
 {{ $csv := $res | transform.Unmarshal }}
 
 {{ if not (and $res $csv) }}
-  <p><strong>Error:</strong> Failed to load or parse CSV file <code>{{ $file }}</code>.</p>
+<p><strong>Error:</strong> Failed to load or parse CSV file <code>{{ $file }}</code>.</p>
 {{ else }}
 
-  <!-- Hardcoded columns -->
-  {{ $columns := slice "Frame Type" "Frame Material" "Glass Thickness" "Platform Thickness" "Download" }}
+<!-- Hardcoded columns -->
+{{ $columns := slice "Frame Type" "Frame Material" "Glass Thickness" "Platform Thickness" "Download" }}
 
-  {{ $headers := index $csv 0 }}
+{{ $headers := index $csv 0 }}
 
-  <!-- Build map of column names to indexes -->
-  {{ $colIndexes := dict }}
-  {{ range $i, $h := $headers }}
-    {{ $colIndexes = merge $colIndexes (dict (lower $h) $i) }}
-  {{ end }}
+<!-- Build map of column names to indexes -->
+{{ $colIndexes := dict }}
+{{ range $i, $h := $headers }}
+{{ $colIndexes = merge $colIndexes (dict (lower $h) $i) }}
+{{ end }}
 
-  <!-- Build the selected column list with indexes -->
-  {{ $selectedCols := slice }}
-  {{ range $columns }}
-    {{ $colName := . }}
-    {{ $key := lower $colName }}
-    {{ if isset $colIndexes $key }}
-        {{ $idx := index $colIndexes $key }}
-        {{ $selectedCols = $selectedCols | append (dict "name" $colName "index" $idx) }}
-    {{ else }}
-        <p style="color:red;">Missing column in CSV: <code>{{ $colName }}</code></p>
-    {{ end }}
-  {{ end }}
+<!-- Build the selected column list with indexes -->
+{{ $selectedCols := slice }}
+{{ range $columns }}
+{{ $colName := . }}
+{{ $key := lower $colName }}
+{{ if isset $colIndexes $key }}
+{{ $idx := index $colIndexes $key }}
+{{ $selectedCols = $selectedCols | append (dict "name" $colName "index" $idx) }}
+{{ else }}
+<p style="color:red;">Missing column in CSV: <code>{{ $colName }}</code></p>
+{{ end }}
+{{ end }}
 
-  <!-- Add filter UI -->
-  <div class="csv-filter-container mb-4">
-    <div class="filter-header d-flex justify-content-between align-items-center mb-3">
-      <button id="reset-filters" class="btn btn-sm btn-outline-secondary">Reset Filters</button>
+<!-- Add filter UI -->
+<div class="csv-filter-container mb-4">
+  <div class="filter-header d-flex justify-content-between align-items-center mb-3">
+  </div>
+  <div class="row">
+    <!-- Description - Larger input -->
+    <div class="col-md-4">
+      <label for="filter-Description" class="form-label">Description</label>
+      <input type="text" class="form-control filter-input" id="filter-Description" data-column="Description">
     </div>
-    <div class="row">
-      <!-- Description - Larger input -->
-      <div class="col-md-5 mb-2">
-        <label for="filter-Description" class="form-label">Description</label>
-        <input type="text" class="form-control filter-input" 
-              id="filter-Description" data-column="Description">
-      </div>
-      
-      <!-- Frame Material - Dropdown -->
-      <div class="col-md-2 mb-2">
-        <label for="filter-Frame-Material" class="form-label">Frame Material</label>
-        <select class="form-select filter-input" id="filter-Frame-Material" data-column="Frame Material">
-          <option value=""></option>
-          <option value="Aluminium">Aluminium</option>
-          <option value="Timber">Timber</option>
-        </select>
-      </div>
-      
-      <!-- Glass Thickness - Smaller input -->
-      <div class="col-md-2 mb-2">
-        <label for="filter-Glass-Thickness" class="form-label">Glass Thickness</label>
-        <input type="text" class="form-control form-control-sm filter-input" 
-              id="filter-Glass-Thickness" data-column="Glass Thickness">
-      </div>
-      
-      <!-- Platform Thickness - Smaller input -->
-      <div class="col-md-2 mb-2">
-        <label for="filter-Platform-Thickness" class="form-label">Platform Thickness</label>
-        <input type="text" class="form-control form-control-sm filter-input" 
-              id="filter-Platform-Thickness" data-column="Platform Thickness">
-      </div>
+
+    <!-- Frame Material - Dropdown -->
+    <div class="col-md-2">
+      <label for="filter-Frame-Material" class="form-label">Frame Material</label>
+      <select class="form-select filter-input" id="filter-Frame-Material" data-column="Frame Material">
+        <option value=""></option>
+        <option value="Aluminium">Aluminium</option>
+        <option value="Timber">Timber</option>
+      </select>
+    </div>
+
+    <!-- Glass Thickness - Smaller input -->
+    <div class="col-md-2">
+      <label for="filter-Glass-Thickness" class="form-label">Glass Thickness</label>
+      <input type="text" class="form-control form-control-sm filter-input" id="filter-Glass-Thickness"
+        data-column="Glass Thickness">
+    </div>
+
+    <!-- Platform Thickness - Smaller input -->
+    <div class="col-md-2">
+      <label for="filter-Platform-Thickness" class="form-label">Platform Thickness</label>
+      <input type="text" class="form-control form-control-sm filter-input" id="filter-Platform-Thickness"
+        data-column="Platform Thickness">
+    </div>
+    <div class="col-md-1 justify-content-center align-items-center d-flex">
+      <button id="reset-filters" class="btn btn-sm btn-outline-secondary">Clear All</button>
     </div>
   </div>
+</div>
 
-  <div class="table-responsive">
-    <table id="csv-data-table" class="table table-striped">
-      <thead>
-        <tr>
-          {{ range $selectedCols }}
-            <th data-column="{{ .name }}">{{ .name }}</th>
-          {{ end }}
-        </tr>
-      </thead>
-      <tbody>
-        {{ range $i, $row := $csv }}
-          {{ if ne $i 0 }}
-            {{ $match := true }}
-            {{ if $filters }}
-              {{ range $key, $val := $filters }}
-                {{ $index := index $colIndexes (lower $key) }}
-                {{ $cell := lower (trim (index $row $index) " ") }}
-                {{ if or (not (isset $colIndexes (lower $key))) (ne $cell (lower (trim $val " "))) }}
-                  {{ $match = false }}
-                {{ end }}
-              {{ end }}
-            {{ end }}
-
-            {{ if $match }}
-              <tr>
-                {{ range $selectedCols }}
-                  {{ $value := index $row .index }}
-                  <td data-column="{{ .name }}">
-                    {{ if or (strings.HasSuffix $value ".pdf") (strings.HasSuffix $value ".dwg") }}
-                      <a href="{{ $value | relURL }}" target="_blank" rel="noopener">PDF</a>
-                    {{ else }}
-                      {{ $value }}
-                    {{ end }}
-                  </td>
-                {{ end }}
-              </tr>
-            {{ end }}
-          {{ end }}
+<div class="table-responsive">
+  <table id="csv-data-table" class="table table-striped">
+    <thead>
+      <tr>
+        {{ range $selectedCols }}
+        <th data-column="{{ .name }}">{{ .name }}</th>
         {{ end }}
-      </tbody>
-    </table>
-  </div>
+      </tr>
+    </thead>
+    <tbody>
+      {{ range $i, $row := $csv }}
+      {{ if ne $i 0 }}
+      {{ $match := true }}
+      {{ if $filters }}
+      {{ range $key, $val := $filters }}
+      {{ $index := index $colIndexes (lower $key) }}
+      {{ $cell := lower (trim (index $row $index) " ") }}
+      {{ if or (not (isset $colIndexes (lower $key))) (ne $cell (lower (trim $val " "))) }}
+      {{ $match = false }}
+      {{ end }}
+      {{ end }}
+      {{ end }}
 
-  <!-- No results message -->
-  <div id="no-results" class="alert alert-info" style="display: none;">
-    No matching results found. Please try different filter criteria.
-  </div>
+      {{ if $match }}
+      <tr>
+        {{ range $selectedCols }}
+        {{ $value := index $row .index }}
+        <td data-column="{{ .name }}">
+          {{ if or (strings.HasSuffix $value ".pdf") (strings.HasSuffix $value ".dwg") }}
+          <a href="{{ (printf "assets/pdfs/%s" $value) | relURL }}" target="_blank" rel="noopener">PDF</a>
+          {{ else }}
+          {{ $value }}
+          {{ end }}
+        </td>
+        {{ end }}
+      </tr>
+      {{ end }}
+      {{ end }}
+      {{ end }}
+    </tbody>
+  </table>
+</div>
 
-  <!-- Add JavaScript for filtering -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const table = document.getElementById('csv-data-table');
-      const rows = table.querySelectorAll('tbody tr');
-      const filterInputs = document.querySelectorAll('.filter-input');
-      const resetButton = document.getElementById('reset-filters');
-      const noResults = document.getElementById('no-results');
-      
-      // Function to filter table rows
-      function filterTable() {
-        let visibleRows = 0;
-        const filters = {};
-        
-        // Collect all filter values
-        filterInputs.forEach(input => {
-          const column = input.getAttribute('data-column');
-          const value = input.value.trim().toLowerCase();
-          if (value) {
-            filters[column] = value;
-          }
-        });
-        
-        // Filter rows based on input values
-        rows.forEach(row => {
-          let showRow = true;
-          
-          // Check if row matches all filters
-          Object.keys(filters).forEach(column => {
-            const cell = row.querySelector(`td[data-column="${column}"]`);
-            const cellText = cell.textContent.toLowerCase();
-            
-            if (!cellText.includes(filters[column])) {
-              showRow = false;
-            }
-          });
-          
-          // Show or hide the row
-          if (showRow) {
-            row.style.display = '';
-            visibleRows++;
-          } else {
-            row.style.display = 'none';
-          }
-        });
-        
-        // Show no results message if needed
-        if (visibleRows === 0 && Object.keys(filters).length > 0) {
-          noResults.style.display = 'block';
-        } else {
-          noResults.style.display = 'none';
-        }
-      }
-      
-      // Add event listeners to all filter inputs
+<!-- No results message -->
+<div id="no-results" class="alert alert-info" style="display: none;">
+  No matching results found. Please try different filter criteria.
+</div>
+
+<!-- Add JavaScript for filtering -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const table = document.getElementById('csv-data-table');
+    const rows = table.querySelectorAll('tbody tr');
+    const filterInputs = document.querySelectorAll('.filter-input');
+    const resetButton = document.getElementById('reset-filters');
+    const noResults = document.getElementById('no-results');
+
+    // Function to filter table rows
+    function filterTable() {
+      let visibleRows = 0;
+      const filters = {};
+
+      // Collect all filter values
       filterInputs.forEach(input => {
-        input.addEventListener('input', filterTable);
+        const column = input.getAttribute('data-column');
+        const value = input.value.trim().toLowerCase();
+        if (value) {
+          filters[column] = value;
+        }
       });
-      
-      // Reset filters
-      resetButton.addEventListener('click', function() {
-        filterInputs.forEach(input => {
-          input.value = '';
+
+      // Filter rows based on input values
+      rows.forEach(row => {
+        let showRow = true;
+
+        // Check if row matches all filters
+        Object.keys(filters).forEach(column => {
+          const cell = row.querySelector(`td[data-column="${column}"]`);
+          const cellText = cell.textContent.toLowerCase();
+
+          if (!cellText.includes(filters[column])) {
+            showRow = false;
+          }
         });
-        rows.forEach(row => {
+
+        // Show or hide the row
+        if (showRow) {
           row.style.display = '';
-        });
-        noResults.style.display = 'none';
+          visibleRows++;
+        } else {
+          row.style.display = 'none';
+        }
       });
+
+      // Show no results message if needed
+      if (visibleRows === 0 && Object.keys(filters).length > 0) {
+        noResults.style.display = 'block';
+      } else {
+        noResults.style.display = 'none';
+      }
+    }
+
+    // Add event listeners to all filter inputs
+    filterInputs.forEach(input => {
+      input.addEventListener('input', filterTable);
     });
-  </script>
+
+    // Reset filters
+    resetButton.addEventListener('click', function () {
+      filterInputs.forEach(input => {
+        input.value = '';
+      });
+      rows.forEach(row => {
+        row.style.display = '';
+      });
+      noResults.style.display = 'none';
+    });
+  });
+</script>
 
 {{ end }}

@@ -1,8 +1,9 @@
 ---
-title: "Double Hung 2 Panel"
-description: ""
+title: "Double Hung"
+description: "Single Glazed"
 image:
   - "/assets/img/products/2DH.png"
+  - "/assets/img/products/4DH.png"
 
 features: |
   - **Sashless Design**: No bulky frames between panes; offers uninterrupted views and a minimalist appearance.
@@ -13,12 +14,10 @@ features: |
   - **Integrated Seals & Weather Stripping**: Ensures air and water tightness, even under adverse conditions.
   - **Safety Features**: Optional restrictors and toughened/laminated safety glass compliant with building codes.
   - **Custom Sizes & Configurations**: Manufactured to fit project-specific dimensions and opening requirements.
-
-
+  - **4-Panel Double Hung Design**: Two pairs of vertically sliding sashless panes for enhanced ventilation and larger openings.
 
 drawings:
   Style: "Double Hung"
-  NoOfPanes: "2"
 
 configurations:
   - name: "4 Panel"
@@ -51,3 +50,5 @@ applications: |
 The Double Hung Sashless Vertical Moving Window is a sleek, modern window system designed to provide maximum ventilation, uninterrupted views, and minimalist aesthetics. 
 
 By eliminating traditional sashes, it delivers a seamless glass-to-glass look while still allowing two operable panes to slide vertically in a counterbalanced system.
+
+The 4-Panel Double Hung Sashless Vertical Moving Window is a sophisticated evolution of the traditional vertical slider. With four operable panes split into two vertically stacked pairs, this system offers exceptional ventilation flexibility, wider openings, and a stunning uninterrupted glass aesthetic. Ideal for large window spans, it retains the clean, minimalist sashless look while maximizing both airflow and visual clarity.

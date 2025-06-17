@@ -6,7 +6,7 @@
             <div class="col-lg-12" data-aos="fade-up" data-aos-delay="200">
 
                 {{ range .Params.image }}
-                <img src="{{ . | relURL }}" alt="{{ $.Title }}" class="img-fluid mb-3 float-start me-4" width="120">
+                <img src="{{ . | relURL }}" alt="{{ $.Title }}" class="img-fluid mb-3 float-start me-4" width="140">
                 {{ end }}
 
                 <div class="service-description">
@@ -21,41 +21,46 @@
 <section id="features" class="features section-tight">
     <div class="container">
 
-        <div class="row gy-4">
+        <div class="row gy-3">
 
             <div class="col-md-12" data-aos="fade-up" data-aos-delay="100">
-                <div class="service-item d-flex position-relative h-100">
-                    <div>
-                        <h4 class="title">Features</h4>
-                        <p class="description">
-                            {{ .Params.features | markdownify }}
-                        </p>
-                    </div>
+                <div class="service-item h-100">
+                    <h4 class="title">Features</h4>
+                    <p class="description">
+                        {{ .Params.features | markdownify }}
+                    </p>
                 </div>
             </div><!-- End Service Item -->
 
             <div class="col-md-12" data-aos="fade-up" data-aos-delay="100">
-                <div class="service-item d-flex position-relative h-100">
-                    <div>
-                        <h4 class="title">Configurations</h4>
-                        <p class="description">
-                            {{ partial "product-configurations.html" . }}
-                        </p>
-                    </div>
+                <div class="service-item h-100">
+                    <h4 class="title">Configurations</h4>
+                    <p class="description">
+                        {{ partial "product-configurations.html" . }}
+                    </p>
                 </div>
             </div><!-- End Service Item -->
 
-                        <div class="col-md-12" data-aos="fade-up" data-aos-delay="100">
-                <div class="service-item d-flex position-relative h-100">
-                    <div>
-                        <h4 class="title">Applications</h4>
-                        <p class="description">
-                             {{ .Params.applications | markdownify }}
-                        </p>
-                    </div>
+            <div class="col-md-12" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-item h-100">
+                    <h4 class="title">Applications</h4>
+                    <p class="description">
+                        {{ .Params.applications | markdownify }}
+                    </p>
                 </div>
             </div><!-- End Service Item -->
 
+            <div class="col-md-12" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-item h-100">
+                    <h4 class="title">Drawings</h4>
+                    <p class="description">
+                        {{ partial "product-drawings.html" (dict
+                        "file" "data/drawings.csv"
+                        "filters" .Params.drawings
+                        ) }}
+                    </p>
+                </div>
+            </div><!-- End Service Item -->
         </div>
     </div>
     <!-- 
