@@ -33,13 +33,13 @@ configurations:
     custom: true
     
 applications: |
-  ### Residential
+  ##### Residential
   - **Living Rooms with Wide Openings**: Expansive views and controllable ventilation for open-plan living.
   - **Luxury Homes & Apartments**: Elegant glazing solution for high-end projects demanding seamless aesthetics.
   - **Indoor-Outdoor Integration**: Ideal for large kitchen or lounge areas opening onto patios or balconies.
   - **Multi-storey Use**: Provides both safety and design appeal in elevated applications.
 
-  ### Commercial
+  ##### Commercial
   - **Cafés & Restaurants**: Perfect for wide openings in dining spaces with maximum transparency and airflow.
   - **Retail Showfronts**: Enhances visibility while offering flexible ventilation options.
   - **Educational Institutions**: Widely suited for classrooms and libraries requiring wide operable windows.

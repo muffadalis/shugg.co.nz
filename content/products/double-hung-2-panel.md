@@ -35,13 +35,13 @@ configurations:
     custom: true
     
 applications: |
-  #### Residential
+  ##### Residential
   - **Modern Homes**: Ideal for designs that emphasize clean lines and expansive views.
   - **Heritage Renovations**: Preserves vertical sliding function with a contemporary twist.
   - **Kitchens & Bathrooms**: Provides effective ventilation without projecting into exterior or interior spaces.
   - **Multi-story Houses**: Enhances façade aesthetics while meeting egress and ventilation standards.
 
-  #### Commercial
+  ##### Commercial
   - **Retail & Hospitality Frontages**: Unobstructed sightlines ideal for cafes, shops, and restaurants.
   - **Apartments & High-Rises**: Optimizes ventilation and natural light without encroaching on balcony space.
   - **Office Buildings**: Supports energy-efficient designs with controllable airflow and daylight access.

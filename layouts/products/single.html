@@ -19,6 +19,46 @@
 
 <!-- Features Section -->
 <section id="features" class="features section-tight">
+    <div class="container">
+
+        <div class="row gy-4">
+
+            <div class="col-md-12" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-item d-flex position-relative h-100">
+                    <div>
+                        <h4 class="title">Features</h4>
+                        <p class="description">
+                            {{ .Params.features | markdownify }}
+                        </p>
+                    </div>
+                </div>
+            </div><!-- End Service Item -->
+
+            <div class="col-md-12" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-item d-flex position-relative h-100">
+                    <div>
+                        <h4 class="title">Configurations</h4>
+                        <p class="description">
+                            {{ partial "product-configurations.html" . }}
+                        </p>
+                    </div>
+                </div>
+            </div><!-- End Service Item -->
+
+                        <div class="col-md-12" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-item d-flex position-relative h-100">
+                    <div>
+                        <h4 class="title">Applications</h4>
+                        <p class="description">
+                             {{ .Params.applications | markdownify }}
+                        </p>
+                    </div>
+                </div>
+            </div><!-- End Service Item -->
+
+        </div>
+    </div>
+    <!-- 
     <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row  gy-4 d-print-none">
             <div class="col-lg-3">
@@ -26,9 +66,9 @@
                     <li class="nav-item">
                         <a class="nav-link active show" data-bs-toggle="tab" href="#features-tab">Features</a>
                     </li>
-                    <!-- <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="tab" href="#drawings-tab">Technical Drawings</a>
-                    </li> -->
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="tab" href="#configurations-tab">Configurations</a>
                     </li>
@@ -74,7 +114,7 @@
             </div>
         </div>
 
-    </div>
+    </div> -->
 
 </section><!-- /Features Section -->
 {{ end }}

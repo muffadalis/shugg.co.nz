@@ -33,12 +33,12 @@ configurations:
     partial: "SH_BF"
     
 applications: |
-  #### Residential
+  ##### Residential
   - Homes requiring improved thermal comfort and noise control  
   - Ideal for bedrooms, living rooms, and street-facing windows  
   - Retrofits for heritage or modern architectural designs  
 
-  #### Commercial
+  ##### Commercial
   - Office buildings aiming to meet energy efficiency standards  
   - Schools and institutions prioritizing safety and comfort  
   - Cafes and hospitality spaces needing both insulation and clear views  
