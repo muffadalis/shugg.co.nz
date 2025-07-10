@@ -504,16 +504,16 @@ h6 {
   border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
-.footer .footer-about .logo {
+.footer .logo {
   line-height: 1;
 }
 
-.footer .footer-about .logo img {
+.footer .logo img {
   max-height: 135px;
   margin-right: 6px;
 }
 
-.footer .footer-about .logo span {
+.footer .logo span {
   font-size: 26px;
   font-weight: 700;
   letter-spacing: 1px;
@@ -521,7 +521,7 @@ h6 {
   color: var(--heading-color);
 }
 
-.footer .footer-about p {
+.footer p {
   font-size: 15px;
   font-family: var(--heading-font);
 }
