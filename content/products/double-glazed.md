@@ -17,7 +17,7 @@ features: |
 
 
 drawings:
-  Style: "Double Hung"
+  Style: "IGU"
 
 configurations:
   - name: "Double Hung 4 Panel"
