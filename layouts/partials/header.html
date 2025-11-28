@@ -19,6 +19,17 @@
             </ul>
           </li>
 
+          <li class="dropdown">
+            <a href="{{ "/balustrades/" | relURL }}">
+              <span>Our Balustrades</span> <i class="bi bi-chevron-down toggle-dropdown"></i>
+            </a>
+            <ul>
+              {{ range where .Site.RegularPages "Section" "balustrades" }}
+                <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+              {{ end }}
+            </ul>
+          </li>
+
           <li><a href="{{ "/about/" | relURL }}">About Us</a></li>
           <li><a href="{{ "/services/" | relURL }}">Services</a></li>
           <li><a href="{{ "/distributors/" | relURL }}">Distributors </a></li>

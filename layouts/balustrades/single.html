@@ -1,0 +1,72 @@
+{{ define "main" }}
+<section id="service-details" class="service-details section-tight">
+    <div class="container">
+        <div class="row mt-3">
+            
+            <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel"
+                data-bs-interval="5000">
+                {{ range $index, $img := .Params.image }}
+                <div class="carousel-item text-center {{ if eq $index 0 }}active{{ end }}">
+                        <img src="{{ . }}" alt="{{ $.Title }}"
+                            class="img-fluid rounded shadow-sm" loading="lazy">
+                </div>
+                {{ end }}
+
+                <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+                </a>
+
+                <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+                    <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+                </a>
+
+                <ol class="carousel-indicators"></ol>
+
+            </div>
+        </div>
+
+        <div class="row gy-4 mt-3">
+            <div class="col-lg-12" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-description">
+                    {{ .Content }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="features" class="features section-tight">
+    <div class="container">
+
+        <div class="row gy-3">
+
+            <div class="col-md-12" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-item h-100">
+                    <h4 class="title">Features</h4>
+                    <p class="description">
+                        {{ .Params.features | markdownify }}
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-12" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-item h-100">
+                    <h4 class="title">Configurations</h4>
+                    <p class="description">
+                        {{ .Params.configurations | markdownify }}
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-12" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-item h-100">
+                    <h4 class="title">Residential and Commercial</h4>
+                    <p class="description">
+                        {{ .Params.applications | markdownify }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}
