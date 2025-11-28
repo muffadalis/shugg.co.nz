@@ -1,5 +1,5 @@
 ---
-title: "Aluminium Balustrades"
+title: "Pool Fences"
 description: ""
 image:
   -  "/assets/img/balustrades/aluminium/aaa111-1024x605.jpg"
@@ -24,16 +24,17 @@ image:
   -  "/assets/img/balustrades/aluminium/Villatop-fixed-4-1024x637.jpg"
 
 features: |
-  - Strongdurable non weld aluminum construction.
-  - Industry leading T6106 temper grade alloy, giving our solutions optimum strength characteristics, corrosion resistance and enjoying   - a high architectural grade finish
-  - Quality powder coated and anodize finishes
-  - Great selection of colours for the frames to compliment or contrast with your property
-  - Fully concealed fittings for greater aesthetics and protectionfrom harmful corrosion
-  - Choice of handrail profile designs
-  - All products are engineer-designed andcomply with AS/NZS 1170.1 Structural Design and Design Loadings.
+  -  Strong, durable non-weld aluminium construction, or both 316 and Duplex medical-grade 2205 stainless steel, with or without A-grade toughened safety glass
+  -  Industry-leading T6 temper-grade alloy, giving our solutions optimum strength characteristics, corrosion resistance and enjoying a high architectural grade surface finish
+  -  Quality powder coated or anodized aluminium finishes, and polished and clear-coat stainless finishes
+  -  Great selection of colours for aluminium frames to complement or contrast with your property
+  -  Matching gates to complement your design, including approved child-proof safety latches and self-closing hinges
+  -  Fully concealed fittings for greater aesthetics and protection from corrosion
+  -  All products are engineer-designed and comply with AS/NZS 1170.1 Structural Design and Design Loadings, along with NZ4223 NZ Glazing Standards and AS1926.1 Swimming Pool safety standards
 
 configurations: |
   - Face fixed or Top fixed applications
+  - Clear, tinted or obscure glass options
   - Combine with other balustrade, pool fence, privacy screen solutions to best suit your application and further compliment your property.
 
 applications: |
@@ -41,4 +42,4 @@ applications: |
 
 ---
 ## Overview
-Our Aluminum Balustrade are at the forefront of balustrade safety and design.Our solutions are constructed from strong durable non weld quality T6106 aluminum. A unique range of balustrade styles to complement modern and contemporary NZ architect.
+There is no need to make your pool or spa area look like a fortress to keep it safe. Our Swimming Pool Fencing has been designed to meet safety regulations in all respects, while not compromising on the landscape of your home – in fact, most of our customers say their new pool fencing enhances the look of their home!

@@ -1,5 +1,5 @@
 {{ define "main" }}
-<section id="service-details" class="service-details section-tight">
+<section id="service-details" class="service-details section-tight ">
     <div class="container">
         <div class="row mt-3">
 
@@ -8,7 +8,7 @@
                 {{ range $index, $img := .Params.image }}
                 <div class="carousel-item text-center {{ if eq $index 0 }}active{{ end }}">
                     <img src="{{ . }}" alt="{{ $.Title }}" class="img-fluid rounded shadow-sm" loading="lazy"
-                        style="width: 100%; aspect-ratio: 1024 / 683; object-fit: cover;">
+                        style="width: 100%; aspect-ratio: 16 / 9; object-fit: cover;">
                 </div>
                 {{ end }}
 
@@ -69,4 +69,14 @@
         </div>
     </div>
 </section>
+
+<style>
+    .carousel-indicators {
+        list-style: none;
+    }
+
+    .carousel-indicators li {
+        cursor: pointer;
+    }
+</style>
 {{ end }}

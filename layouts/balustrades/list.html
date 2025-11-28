@@ -8,7 +8,7 @@
             <div class="col-md-4" data-aos="fade-up" data-aos-delay="100"> 
                 <div class="service-item d-flex flex-column align-items-center position-relative" style="padding: 0.9rem;"> 
                     {{ with index .Params.image 0 }} 
-                    <img class="flex-shrink-0 mb-3" src="{{ . | relURL }}" alt="{{ $.Title }}" style="width: 100%; max-width: 200px; aspect-ratio: 1024 / 683; object-fit: cover;"> 
+                    <img class="flex-shrink-0 mb-3" src="{{ . | relURL }}" alt="{{ $.Title }}" style="width: 100%; max-width: 200px; aspect-ratio: 16 / 9; object-fit: cover;"> 
                     {{ end }} 
                     <div class="d-flex flex-column justify-content-center align-items-center"> 
                         <h4 class="title mb-1"> 
