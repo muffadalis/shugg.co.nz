@@ -1,8 +1,8 @@
 ---
 title: "Euro Fin Balustrades"
+weight: 7
 description: ""
 image:
-  -  /assets/img/balustrades/euro-fin-balustrade/Mask-Group-8-1.png
   -  /assets/img/balustrades/euro-fin-balustrade/IMG_5184.jpg
   -  /assets/img/balustrades/euro-fin-balustrade/IMG_5185.jpg
   -  /assets/img/balustrades/euro-fin-balustrade/IMG_5186.jpg

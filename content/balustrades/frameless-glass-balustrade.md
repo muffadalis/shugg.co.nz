@@ -1,6 +1,7 @@
 ---
 title: "Frameless Glass Balustrade"
 description: ""
+weight: 1
 image:
   -  /assets/img/balustrades/frameless-glass-balustrade/aaa1.jpg
   -  /assets/img/balustrades/frameless-glass-balustrade/aaa2.jpg

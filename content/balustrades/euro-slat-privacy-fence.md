@@ -1,6 +1,7 @@
 ---
 title: "Euro Slat Privacy Fence"
 description: ""
+weight: 6
 image:
   -  /assets/img/balustrades/euro-slat-privacy-fence/aaaeee-e1533277998222.jpg 
   -  /assets/img/balustrades/euro-slat-privacy-fence/Mask-Group-8-1.png 

@@ -1,6 +1,7 @@
 ---
 title: "Pool Fences"
 description: ""
+weight: 5
 image:
   -  /assets/img/balustrades/pool-fences/111b.jpg 
   -  /assets/img/balustrades/pool-fences/111.jpg 

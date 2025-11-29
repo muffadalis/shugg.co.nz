@@ -1,6 +1,7 @@
 ---
 title: "Framed Glass Balustrade"
 description: ""
+weight: 3
 image:
   -  /assets/img/balustrades/framed-glass/100aa4.jpg
   -  /assets/img/balustrades/framed-glass/Manor-top-fixed1.jpg

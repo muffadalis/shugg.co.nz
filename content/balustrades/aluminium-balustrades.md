@@ -1,6 +1,7 @@
 ---
 title: "Aluminium Balustrades"
 description: ""
+weight: 4
 image:
   -  "/assets/img/balustrades/aluminium/aaa111-1024x605.jpg"
   -  "/assets/img/balustrades/aluminium/Aluminum-baluster-and-euro-slat-1024x683.jpg"
