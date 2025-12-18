@@ -1,5 +1,5 @@
 <div id="factory-closure-banner">
-    ⚠️ Factory closed on 22nd Dec 2025 to 9th of Jan 2026.
+    <span id="banner-text">⚠️ Factory closed</span>
     <button onclick="dismissBanner()" class="dismiss-btn">Dismiss</button>
 </div>
 
@@ -29,16 +29,44 @@
 </style>
 
 <script>
+    //--------------------------------------------------------------------------
+    //  Configuration - set your banner and break dates here
+    //--------------------------------------------------------------------------
     const bannerStart = new Date("2025-12-1");
     const bannerEnd = new Date("2026-01-10");
+
+    const breakStart = new Date("2025-12-22");
+    const breakEnd = new Date("2026-01-9");
+    //--------------------------------------------------------------------------
+
     const today = new Date();
     const bannerDismissed = localStorage.getItem("factoryBannerDismissed");
 
+    // simple ordinal helper
+    function ordinal(n) {
+        const s = ["th","st","nd","rd"];
+        const v = n % 100;
+        return n + (s[(v-20)%10] || s[v] || s[0]);
+    }
+
+    // format like "22nd Dec 2025" or "9th of Jan 2026" when includeOf=true
+    function formatDate(d, includeOf = false) {
+        const day = ordinal(d.getDate());
+        const month = d.toLocaleString('en-GB', { month: 'short' }); // "Dec", "Jan"
+        const year = d.getFullYear();
+        return includeOf ? `${day} of ${month} ${year}` : `${day} ${month} ${year}`;
+    }
+
     document.addEventListener("DOMContentLoaded", () => {
         const banner = document.getElementById("factory-closure-banner");
-        // if (!banner) return;
+        const text = document.getElementById("banner-text");
+
+        if (!banner || !text) return;
+
         if (today >= bannerStart && today <= bannerEnd) {
-            console.log(`Banner is active between ${bannerStart} and ${bannerEnd}`);
+            var bannerText = `⚠️ Factory closed on ${formatDate(breakStart)} to ${formatDate(breakEnd)}.`
+            text.textContent = bannerText;
+            console.log(bannerText);
             banner.style.display = "block";
         } else {
             console.log("Banner is no longer active.");
