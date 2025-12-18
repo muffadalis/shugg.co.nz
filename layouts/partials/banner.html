@@ -1,5 +1,5 @@
 <div id="factory-closure-banner">
-    ⚠️ Factory closed on 3rd and 4th of July.
+    ⚠️ Factory closed on 22nd Dec 2025 to 9th of Jan 2026.
     <button onclick="dismissBanner()" class="dismiss-btn">Dismiss</button>
 </div>
 
@@ -29,16 +29,16 @@
 </style>
 
 <script>
-    const bannerStart = new Date("2025-06-17");
-    const bannerEnd = new Date("2025-07-04");
+    const bannerStart = new Date("2025-12-1");
+    const bannerEnd = new Date("2026-01-10");
     const today = new Date();
     const bannerDismissed = localStorage.getItem("factoryBannerDismissed");
 
     document.addEventListener("DOMContentLoaded", () => {
         const banner = document.getElementById("factory-closure-banner");
-        if (!banner) return;
+        // if (!banner) return;
         if (today >= bannerStart && today <= bannerEnd) {
-            console.log("Banner is active until", bannerEnd);
+            console.log(`Banner is active between ${bannerStart} and ${bannerEnd}`);
             banner.style.display = "block";
         } else {
             console.log("Banner is no longer active.");
