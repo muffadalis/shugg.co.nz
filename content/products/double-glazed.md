@@ -5,6 +5,11 @@ image:
   - "/assets/img/products/2DH.png"
   - "/assets/img/products/SH_BF.png"
   - "/assets/img/products/SH_TF.png"
+gallery:
+  -  "/assets/img/windows/DG/dg1.jpg"
+  -  "/assets/img/windows/DG/20260309_084705.jpg"
+  -  "/assets/img/windows/DG/20260309_084651.jpg"
+
 features: |
   - Compatible with Shugg vertical sliding window systems  
   - Enhanced energy efficiency through insulated glass units (IGUs)  

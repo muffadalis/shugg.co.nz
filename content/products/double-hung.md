@@ -5,6 +5,12 @@ image:
   - "/assets/img/products/2DH.png"
   - "/assets/img/products/4DH.png"
 
+gallery:
+  -  "/assets/img/windows/DH/porta1.jpg"
+  -  "/assets/img/windows/DH/Double Hung Vertical Sliding Window System 1.jpg"
+  -  "/assets/img/windows/DH/Double Hung Vertical Sliding Window System 4.jpg"
+  -  "/assets/img/windows/DH/Double Hung Vertical Sliding Window System 5.jpg"
+
 features: |
   - **Sashless Design**: No bulky frames between panes; offers uninterrupted views and a minimalist appearance.
   - **Double Hung Functionality**: Both the top and bottom glass panes slide vertically for flexible ventilation.

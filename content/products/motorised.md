@@ -5,6 +5,12 @@ image:
   - "/assets/img/products/2DH_M.png"
   - "/assets/img/products/SH_BF_M.png"
   - "/assets/img/products/SH_TF_M.png"
+
+gallery:
+  -  "/assets/img/windows/motorised/WhatsApp Image 2026-02-03 at 1.59.46 PM.jpeg"
+  -  "/assets/img/windows/motorised/WhatsApp Image 2026-02-03 at 1.59.47 PM.jpeg"
+  -  "/assets/img/windows/motorised/Motorised Vertical Sliding Window System 2.jpg"
+
 features: |
   - Available across all Shugg configurations: Single Hung, Double Hung, and IGU  
   - Smooth, quiet, and precise operation with integrated motor  

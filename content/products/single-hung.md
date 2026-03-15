@@ -6,6 +6,14 @@ image:
   - "/assets/img/products/SH_TF.png"
   - "/assets/img/products/3SH_T.png"
 
+gallery:
+  -  "/assets/img/windows/SH/85nv2.jpg"
+  -  "/assets/img/windows/SH/cedarLR.jpg"
+  -  "/assets/img/windows/SH/Custom Solutions For Vertical Sliding Window System 4.jpg"
+  -  "/assets/img/windows/SH/macs bar.jpg"
+  -  "/assets/img/windows/SH/porta3.jpg"
+  -  "/assets/img/windows/SH/archLR.jpg"
+
 features: |
   - **Top Sash Operability:** The upper pane slides vertically downward, allowing ventilation while keeping the bottom area sealed — perfect for preventing falls or water intrusion.
   - **Fixed Panel as Balustrade**: Bottom fixed glass can be structurally rated to serve as a compliant balustrade in lieu of external barriers.
