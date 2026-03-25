@@ -6,7 +6,7 @@ image:
   - "/assets/img/products/SH_BF.png"
   - "/assets/img/products/SH_TF.png"
 gallery:
-  -  "/assets/img/windows/DG/DG1.jpg"
+  -  "/assets/img/windows/DG/DG1.JPG"
   -  "/assets/img/windows/DG/20260309_084705.jpg"
   -  "/assets/img/windows/DG/20260309_084651.jpg"
 
