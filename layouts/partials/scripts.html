@@ -19,6 +19,15 @@
 <!-- Main JS File -->
 <script src="{{ "assets/js/main.js" | relURL }}"></script>
 
+{{ $pdJs := resources.Get "wc/pd.js" | fingerprint }}
+<script src='{{ $pdJs.RelPermalink }}'></script>
+
+{{ $peJs := resources.Get "wc/pe.js" | js.Build | fingerprint }}
+<script  type="module"  src='{{ $peJs.RelPermalink }}'></script>
+
+{{ $calcJs := resources.Get "wc/window-calculator.js" | js.Build | fingerprint }}
+<script type="module" src="{{ $calcJs.RelPermalink }}"></script>
+
 <!-- Cookie Consent Banner -->
 <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />

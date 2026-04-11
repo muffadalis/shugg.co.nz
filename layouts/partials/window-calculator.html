@@ -1,0 +1,177 @@
+<div class="quote-calculator-section py-5">
+    <div class="container">
+        <div class="quote-calculator-wrap">
+
+            <h2 class="calculator-title mb-4">
+                We'll help you calculate an approximate cost
+            </h2>
+
+            <div class="row g-4 align-items-start">
+                <!-- LEFT PANEL -->
+                <div class="col-lg-6">
+                    <div class="calculator-card">
+                        <div class="top-tabs d-flex justify-content-center gap-2 mb-4">
+                            <button class="calc-pill active" type="button" data-type="SH_TF">Single Hung - Top
+                                Fixed</button>
+                            <button class="calc-pill" type="button" data-type="SH_BF">Single Hung - Bottom
+                                Fixed</button>
+                            <button class="calc-pill" type="button" data-type="2DH">Double Hung</button>
+                        </div>
+
+                        <div class="calc-stage">
+                            <!-- Height (Vertical Slider) -->
+                            <div class="measure measure-left">
+                                <!-- <span class="measure-top">5000 mm</span> -->
+
+                                <div class="slider-vertical-wrap">
+                                    <input type="range" min="0" max="5000" value="2000" step="10"
+                                        class="vertical-slider" id="heightSlider" />
+                                </div>
+
+                                <span class="measure-current" id="heightValue">2000</span>
+                                <!-- <span class="measure-bottom">0 mm</span> -->
+                            </div>
+
+                            <!-- Width (Horizontal Slider) -->
+                            <div class="measure measure-bottom-horizontal">
+                                <!-- <span class="measure-left-label">0 mm</span> -->
+
+                                <div class="slider-horizontal-wrap">
+                                    <input type="range" min="0" max="5000" value="1700" step="10"
+                                        class="horizontal-slider" id="widthSlider" />
+                                </div>
+
+                                <span class="measure-current-horizontal" id="widthValue">1700</span>
+                                <!-- <span class="measure-right-label">5000 mm</span> -->
+                            </div>
+
+                            <!-- Main window image -->
+                            <div class="window-preview">
+                                <img id="windowImage" 
+                                    data-base="{{ "assets/img/products" | absURL }}" 
+                                    src="{{ "assets/img/products/SH_TF.png" | absURL }}" 
+                                    alt="Window preview" class="img-fluid" />
+                            </div>
+
+                            <!-- Shape selector -->
+                            <!-- <div class="shape-selector">
+                                <button class="shape-btn" type="button">
+                                    5 mm - 8mm Glass
+                                </button>
+                                <button class="shape-btn" type="button">
+                                    8 mm - 11mm Glass
+                                </button>
+                                <button class="shape-btn active" type="button">
+                                    12 mm - 14mm Glass
+                                </button>
+                                <button class="shape-btn" type="button">
+                                    more than 15 mm Glass
+                                </button>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT PANEL -->
+                <div class="col-lg-6">
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="option-block">
+                                <h5 class="option-title">Glazing</h5>
+
+                                <div class="glazing-options">
+                                    <label class="glazing-pill">
+                                        <input type="radio" name="glazing" value="SG" />
+                                        <span>Single</span>
+                                    </label>
+
+                                    <label class="glazing-pill active">
+                                        <input type="radio" name="glazing" value="DG" checked />
+                                        <span>Double</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="option-block">
+                                <h5 class="option-title">Additional</h5>
+
+                                <div class="additional-options">
+                                    <label class="check-line">
+                                        <input type="checkbox" id="motorisedToggle" />
+                                        <span>Motorised</span>
+                                    </label>
+                                    <!-- <label class="check-line">
+                                        <input type="checkbox" id="commercialToggle" />
+                                        <span>More than 8mm Glass</span>
+                                    </label> -->
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="option-block">
+                                <h5 class="option-title">Wind Zone</h5>
+
+                                <div class="glazing-options">
+                                    <label class="glazing-pill">
+                                        <input type="radio" name="wind-zone" value="Internal" />
+                                        <span>Internal</span>
+                                    </label>
+
+                                    <label class="glazing-pill">
+                                        <input type="radio" name="wind-zone" value="Low" />
+                                        <span>Low</span>
+                                    </label>
+                                    <label class="glazing-pill active">
+                                        <input type="radio" name="wind-zone" value="Medium" checked />
+                                        <span>Medium</span>
+                                    </label>
+                                    <label class="glazing-pill">
+                                        <input type="radio" name="wind-zone" value="High" />
+                                        <span>High</span>
+                                    </label>
+                                    <label class="glazing-pill">
+                                        <input type="radio" name="wind-zone" value="Very High" />
+                                        <span>Very High</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="option-block">
+                                <h5 class="option-title">Glass Thickness</h5>
+
+                                <div class="glazing-options">
+                                    <label class="glazing-pill">
+                                        <input type="radio" name="glass-thickness" value="5" checked />
+                                        <span>5mm - 7mm</span>
+                                    </label>
+
+                                    <label class="glazing-pill">
+                                        <input type="radio" name="glass-thickness" value="8" />
+                                        <span>8mm - 11mm</span>
+                                    </label>
+                                    <label class="glazing-pill">
+                                        <input type="radio" name="glass-thickness" value="12" />
+                                        <span>12mm - 14mm</span>
+                                    </label>
+                                    <label class="glazing-pill">
+                                        <input type="radio" name="glass-thickness" value="15" />
+                                        <span>15mm and above</span>
+                                    </label>
+                                    
+                                    <!-- Add more glass thickness options as needed -->
+                                </div>
+                            </div>
+                    </div>
+
+                    <div class="price-list mt-4">
+                        <div class="price-row">
+                           <div id="quoteOutput"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

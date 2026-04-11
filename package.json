@@ -1,0 +1,19 @@
+{
+  "name": "shugg-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "obfuscate": "javascript-obfuscator public/wc --output public/wc --log false --compact true --string-array true --string-array-encoding base64"
+  },
+  "devDependencies": {
+    "javascript-obfuscator": "^5.4.1"
+  },
+  "packageManager": "yarn@4.3.0",
+  "resolutions": {
+    "postcss": "8"
+  },
+  "engines": {
+    "yarn": "4.3.0",
+    "node": "20.11.1"
+  }
+}

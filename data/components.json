@@ -1,0 +1,106 @@
+[
+  {
+    "title": "Pin",
+    "slug": "pin",
+    "sku": "COMP-PIN",
+    "price": 7.00,
+    "unit": "each",
+    "summary": "Replacement pin component.",
+    "description": "Pin for Shugg vertical sliding window servicing and replacement work.",
+    "image": ""
+  },
+  {
+    "title": "H Plastic",
+    "slug": "h-plastic",
+    "sku": "COMP-HPLASTIC",
+    "price": 10.00,
+    "unit": "each",
+    "summary": "Plastic H section component.",
+    "description": "H Plastic for Shugg vertical sliding window servicing and replacement work.",
+    "image": ""
+  },
+  {
+    "title": "Sash cord",
+    "slug": "sash-cord",
+    "sku": "COMP-SASHCORD",
+    "price": 8.00,
+    "unit": "each",
+    "summary": "Replacement sash cord.",
+    "description": "Sash cord for Shugg vertical sliding window servicing and replacement work.",
+    "image": ""
+  },
+  {
+    "title": "Adhesive Tube",
+    "slug": "adhesive-tube",
+    "sku": "COMP-ADHESIVE",
+    "price": 35.00,
+    "unit": "each",
+    "summary": "Adhesive tube for installation and repair.",
+    "description": "Adhesive Tube for Shugg vertical sliding window servicing and replacement work.",
+    "image": ""
+  },
+  {
+    "title": "Lock Satin chrome",
+    "slug": "lock-satin-chrome",
+    "sku": "COMP-LOCK-SC",
+    "price": 75.00,
+    "unit": "each",
+    "summary": "Satin chrome lock option.",
+    "description": "Lock Satin chrome for Shugg vertical sliding window servicing and replacement work.",
+    "image": ""
+  },
+  {
+    "title": "Lock Other finish",
+    "slug": "lock-other-finish",
+    "sku": "COMP-LOCK-OF",
+    "price": 55.00,
+    "unit": "each",
+    "summary": "Lock in alternate finish.",
+    "description": "Lock Other finish for Shugg vertical sliding window servicing and replacement work.",
+    "image": ""
+  },
+  {
+    "title": "Lock Base",
+    "slug": "lock-base",
+    "sku": "COMP-LOCKBASE",
+    "price": 20.00,
+    "unit": "each",
+    "summary": "Replacement lock base.",
+    "description": "Lock Base for Shugg vertical sliding window servicing and replacement work.",
+    "image": ""
+  },
+  {
+    "title": "Acrylic lift",
+    "slug": "acrylic-lift",
+    "sku": "COMP-ACRYLIC",
+    "price": 15.00,
+    "unit": "each",
+    "summary": "Acrylic lift replacement part.",
+    "description": "Acrylic lift for Shugg vertical sliding window servicing and replacement work.",
+    "bulkPrice": 11.00,
+    "bulkNote": "100 plus",
+    "image": ""
+  },
+  {
+    "title": "Mideseals",
+    "slug": "mideseals",
+    "sku": "COMP-MIDESEALS",
+    "price": 15.00,
+    "unit": "each",
+    "summary": "Replacement mideseals.",
+    "description": "Mideseals for Shugg vertical sliding window servicing and replacement work.",
+    "bulkPrice": 11.00,
+    "bulkNote": "< 1m",
+    "image": ""
+  },
+  {
+    "title": "Mohair",
+    "slug": "mohair",
+    "sku": "COMP-MOHAIR",
+    "price": 5.00,
+    "unit": "1m",
+    "summary": "Mohair sealing material.",
+    "description": "Mohair for Shugg vertical sliding window servicing and replacement work.",
+    "image": ""
+  }
+]

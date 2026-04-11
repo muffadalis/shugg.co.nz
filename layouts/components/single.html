@@ -1,0 +1,84 @@
+{{ define "main" }}
+<section class="py-5">
+  <div class="container">
+
+    <div class="row g-4">
+      {{ range site.Data.components }}
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card h-100 shadow-sm border-0">
+
+          <div class="position-relative">
+            <a href="{{ printf "/components/%s/" .slug | relURL }}">
+              <img
+                src="{{ .image | relURL }}"
+                class="card-img-top"
+                alt="{{ .title }}"
+                style="object-fit: cover; height: 260px;"
+              >
+            </a>
+
+            <!-- {{ if .sale }}
+            <span class="badge bg-danger position-absolute top-0 start-0 m-2">Sale</span>
+            {{ end }}
+
+            {{ if not .inStock }}
+            <span class="badge bg-secondary position-absolute top-0 end-0 m-2">Sold Out</span>
+            {{ end }} -->
+          </div>
+
+          <div class="card-body d-flex flex-column">
+            {{ with .categories }}
+            <div class="mb-2 small text-muted">
+              {{ range $i, $cat := . }}
+                {{ if $i }} · {{ end }}{{ $cat }}
+              {{ end }}
+            </div>
+            {{ end }}
+
+            <h5 class="card-title">
+              <a href="{{ printf "/components/%s/" .slug | relURL }}" class="text-decoration-none text-dark">
+                {{ .title }}
+              </a>
+            </h5>
+
+            {{ with .summary }}
+            <p class="card-text text-muted small">{{ . }}</p>
+            {{ end }}
+
+            <div class="mt-auto">
+              <div class="mb-3">
+                {{ if .oldPrice }}
+                  <span class="text-muted text-decoration-line-through me-2">${{ .oldPrice }}</span>
+                {{ end }}
+                <span class="fw-bold fs-5">${{ .price }}</span>
+                {{ with .unit }}
+                  <span class="text-muted small"> / {{ . }}</span>
+                {{ end }}
+              </div>
+
+              {{ if .inStock }}
+              <button
+                class="btn btn-dark w-100 snipcart-add-item"
+                data-item-id="{{ .sku }}"
+                data-item-name="{{ .title }}"
+                data-item-price="{{ .price }}"
+                data-item-url="{{ printf "/components/%s/" .slug | absURL }}"
+                data-item-description="{{ .summary }}"
+                data-item-image="{{ .image | absURL }}">
+                Add to cart
+              </button>
+              {{ else }}
+              <a href="{{ printf "/components/%s/" .slug | relURL }}" class="btn btn-outline-secondary w-100">
+                View Product
+              </a>
+              {{ end }}
+            </div>
+          </div>
+
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
