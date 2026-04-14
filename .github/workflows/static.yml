@@ -27,10 +27,15 @@ jobs:
         with:
           hugo-version: '0.147.3'
           extended: true
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
 
       - name: Build Hugo site
         run: hugo --minify --baseURL="https://muffadalis.github.io/shugg.co.nz"
 
+      - name: Obfuscate JS
+        run: yarn obfuscate
+        
       - name: List build output
         run: ls -R public
 
