@@ -26,10 +26,13 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: 22
-          cache: yarn
+          package-manager-cache: false
 
       - name: Enable Corepack
-        run: corepack enable
+        run: |
+          corepack enable
+          corepack prepare yarn@4.3.0 --activate
+          yarn --version
 
       - name: Install dependencies
         run: yarn install --immutable
