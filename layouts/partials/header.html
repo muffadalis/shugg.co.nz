@@ -1,49 +1,51 @@
-  <header id="header" class="header d-flex align-items-center sticky-top d-print-none">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+<header id="header" class="header align-items-center sticky-top d-print-none">
+  {{ partial "banner.html" . }}
 
-<a href="{{ "/" | relURL }}" class="logo d-flex flex-column flex-md-row align-items-center me-auto">
-  <img src="{{ "assets/img/Shugg.png" | relURL }}" alt="" class="mb-2 mb-md-0 me-md-2">
-  <img src="{{ "assets/img/Neotech.png" | relURL }}" alt="" class="d-none d-md-block">
-</a>
+  <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li class="dropdown">
-            <a href="{{ "/products/" | relURL }}">
-              <span>Our Windows</span> <i class="bi bi-chevron-down toggle-dropdown"></i>
-            </a>
-            <ul>
-              {{ range where .Site.RegularPages "Section" "products" }}
-                <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-              {{ end }}
-            </ul>
-          </li>
+    <a href="{{ "/" | relURL }}" class="logo d-flex flex-column flex-md-row align-items-center me-auto">
+      <img src="{{ "assets/img/Shugg.png" | relURL }}" alt="" class="mb-2 mb-md-0 me-md-2">
+      <img src="{{ "assets/img/Neotech.png" | relURL }}" alt="" class="d-none d-md-block">
+    </a>
 
-          <li class="dropdown">
-            <a href="{{ "/balustrades/" | relURL }}">
-              <span>Our Balustrades</span> <i class="bi bi-chevron-down toggle-dropdown"></i>
-            </a>
-            <ul>
-              {{ range where .Site.RegularPages.ByWeight "Section" "balustrades" }}
-                <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-              {{ end }}
-            </ul>
-          </li>
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li class="dropdown">
+          <a href="{{ "/products/" | relURL }}">
+            <span>Our Windows</span> <i class="bi bi-chevron-down toggle-dropdown"></i>
+          </a>
+          <ul>
+            {{ range where .Site.RegularPages "Section" "products" }}
+            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+            {{ end }}
+          </ul>
+        </li>
 
-          <li><a href="{{ "/about/" | relURL }}">About Us</a></li>
-          <li><a href="{{ "/services/" | relURL }}">Services</a></li>
-          <!-- <li><a href="{{ "/components/" | relURL }}">Components</a></li> -->
-          <li><a href="{{ "/distributors/" | relURL }}">Distributors </a></li>
+        <li class="dropdown">
+          <a href="{{ "/balustrades/" | relURL }}">
+            <span>Our Balustrades</span> <i class="bi bi-chevron-down toggle-dropdown"></i>
+          </a>
+          <ul>
+            {{ range where .Site.RegularPages.ByWeight "Section" "balustrades" }}
+            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+            {{ end }}
+          </ul>
+        </li>
 
-          <!-- <li><a href="portfolio.html">Portfolio</a></li> -->
-          <!-- <li><a href="pricing.html">Pricing</a></li> -->
-          <!-- <li><a href="blog.html">Blog</a></li> -->
-          <!-- <li><a href="contact.html">Contact</a></li> -->
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
+        <li><a href="{{ "/about/" | relURL }}">About Us</a></li>
+        <li><a href="{{ "/services/" | relURL }}">Services</a></li>
+        <!-- <li><a href="{{ "/components/" | relURL }}">Components</a></li> -->
+        <li><a href="{{ "/distributors/" | relURL }}">Distributors </a></li>
 
-      <a class="btn-getstarted" href="/assets/docs/Quote Order From.pdf" target="_blank">Get a Quote Now</a>
+        <!-- <li><a href="portfolio.html">Portfolio</a></li> -->
+        <!-- <li><a href="pricing.html">Pricing</a></li> -->
+        <!-- <li><a href="blog.html">Blog</a></li> -->
+        <!-- <li><a href="contact.html">Contact</a></li> -->
+      </ul>
+      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+    </nav>
 
-    </div>
-  </header>
+    <!-- <a class="btn-getstarted" href="/assets/docs/Quote Order From.pdf" target="_blank">Get a Quote Now</a> -->
+    {{ partial "get-quote-button.html" . }}
+  </div>
+</header>
