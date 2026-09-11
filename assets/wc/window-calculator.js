@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const input = getInputModel();
 
     const result = window.PricingEngine.calculateQuote(input);
-    const output = window.PricingEngine.buildQuoteOutput(result);
+    const output = window.PricingEngine.buildQuoteOutput(result, true);
 
     if (quoteOutput) {
       quoteOutput.innerHTML = output.html;
@@ -140,5 +140,6 @@ document.addEventListener("DOMContentLoaded", function () {
   updateHeight(heightSlider.value);
   updateWidth(widthSlider.value);
   updateImage();
+  refreshQuote();
 });
 

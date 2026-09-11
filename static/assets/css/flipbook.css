@@ -1,0 +1,157 @@
+.flipbook-shell {
+  max-width: 1320px;
+  margin: 2rem auto;
+  padding: 1.25rem;
+  border-radius: 24px;
+  background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
+  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.12);
+}
+.flipbook-topbar,
+.flipbook-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.flipbook-kicker {
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #64748b;
+  margin-bottom: 0.35rem;
+}
+.flipbook-title {
+  margin: 0;
+  font-size: clamp(1.5rem, 2vw, 2.4rem);
+  color: #0f172a;
+}
+.flipbook-actions,
+.flipbook-toolbar-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+.flipbook-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1rem;
+  border-radius: 999px;
+  background: white;
+  border: 1px solid #cbd5e1;
+  color: #0f172a;
+  text-decoration: none;
+  cursor: pointer;
+  font: inherit;
+}
+.flipbook-btn.is-primary {
+  background: #0f172a;
+  color: white;
+  border-color: #0f172a;
+}
+.flipbook-btn.is-small {
+  padding: 0.5rem 0.85rem;
+}
+.flipbook-stage-wrap {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 0 1rem;
+}
+.flipbook-stage {
+  min-height: 74vh;
+  border-radius: 24px;
+  background: radial-gradient(circle at top, #ffffff 0%, #e2e8f0 100%);
+  box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 1rem;
+}
+.flipbook-canvas {
+  width: min(100%, 1180px);
+  height: min(74vh, 860px);
+  margin: 0 auto;
+}
+.flipbook-nav {
+  width: 52px;
+  height: 52px;
+  border: 0;
+  border-radius: 999px;
+  background: white;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.14);
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.flipbook-page-status {
+  display: inline-flex;
+  gap: 0.4rem;
+  align-items: center;
+  font-weight: 600;
+  color: #334155;
+}
+.flipbook-thumbs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+.flipbook-thumb {
+  border: 1px solid #cbd5e1;
+  background: white;
+  border-radius: 16px;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  cursor: pointer;
+}
+.flipbook-thumb img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
+.flipbook-thumb span {
+  font-size: 0.9rem;
+  color: #334155;
+}
+.flipbook-page {
+  background: white;
+}
+.flipbook-page img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+.flipbook-shell.is-fullscreen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  margin: 0;
+  max-width: none;
+  border-radius: 0;
+  padding: 1rem;
+  overflow: auto;
+}
+.flipbook-shell.is-fullscreen .flipbook-stage {
+  min-height: calc(100vh - 170px);
+}
+@media (max-width: 900px) {
+  .flipbook-stage-wrap {
+    grid-template-columns: 1fr;
+  }
+  .flipbook-nav {
+    display: none;
+  }
+  .flipbook-canvas {
+    height: min(72vh, 760px);
+  }
+}

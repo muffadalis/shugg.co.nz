@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shugg Interactive Brochure</title>
+  <link rel="stylesheet" href="/css/flipbook.css">
+</head>
+<body style="margin:0;background:#e2e8f0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;">
+  <div class="flipbook-shell" id="standalone-shell">
+    <div class="flipbook-topbar">
+      <div>
+        <div class="flipbook-kicker">Interactive brochure</div>
+        <h1 class="flipbook-title">Shugg Vertical Sliding Windows</h1>
+      </div>
+      <div class="flipbook-actions">
+        <a class="flipbook-btn is-primary" href="/contact/">Get a quote</a>
+        <a class="flipbook-btn" href="https://shugg.co.nz/assets/docs/Brochure.pdf" target="_blank" rel="noopener">Download PDF</a>
+      </div>
+    </div>
+    <div class="flipbook-stage-wrap">
+      <button class="flipbook-nav flipbook-prev" type="button" aria-label="Previous page">‹</button>
+      <div class="flipbook-stage"><div class="flipbook-canvas" id="standalone-flipbook"></div></div>
+      <button class="flipbook-nav flipbook-next" type="button" aria-label="Next page">›</button>
+    </div>
+    <div class="flipbook-toolbar">
+      <div class="flipbook-page-status"><span class="flipbook-current">1</span><span>/</span><span class="flipbook-total">8</span></div>
+      <div class="flipbook-toolbar-actions">
+        <button class="flipbook-btn is-small js-toggle-thumbs" type="button">Thumbnails</button>
+        <button class="flipbook-btn is-small js-fullscreen" type="button">Fullscreen</button>
+      </div>
+    </div>
+    <div class="flipbook-thumbs" hidden>
+      <button class="flipbook-thumb" type="button" data-page="1"><img src="/flipbooks/shugg-brochure/thumbs/page-01.webp" alt="Page 1"><span>Page 1</span></button>
+      <button class="flipbook-thumb" type="button" data-page="2"><img src="/flipbooks/shugg-brochure/thumbs/page-02.webp" alt="Page 2"><span>Page 2</span></button>
+      <button class="flipbook-thumb" type="button" data-page="3"><img src="/flipbooks/shugg-brochure/thumbs/page-03.webp" alt="Page 3"><span>Page 3</span></button>
+      <button class="flipbook-thumb" type="button" data-page="4"><img src="/flipbooks/shugg-brochure/thumbs/page-04.webp" alt="Page 4"><span>Page 4</span></button>
+      <button class="flipbook-thumb" type="button" data-page="5"><img src="/flipbooks/shugg-brochure/thumbs/page-05.webp" alt="Page 5"><span>Page 5</span></button>
+      <button class="flipbook-thumb" type="button" data-page="6"><img src="/flipbooks/shugg-brochure/thumbs/page-06.webp" alt="Page 6"><span>Page 6</span></button>
+      <button class="flipbook-thumb" type="button" data-page="7"><img src="/flipbooks/shugg-brochure/thumbs/page-07.webp" alt="Page 7"><span>Page 7</span></button>
+      <button class="flipbook-thumb" type="button" data-page="8"><img src="/flipbooks/shugg-brochure/thumbs/page-08.webp" alt="Page 8"><span>Page 8</span></button>
+    </div>
+    <script type="application/json" class="flipbook-config">
+      {
+        "id": "standalone-flipbook",
+        "title": "Shugg Vertical Sliding Windows",
+        "showCover": true,
+        "aspectWidth": 1241,
+        "aspectHeight": 1754,
+        "pages": [
+          "/flipbooks/shugg-brochure/pages/page-01.webp",
+          "/flipbooks/shugg-brochure/pages/page-02.webp",
+          "/flipbooks/shugg-brochure/pages/page-03.webp",
+          "/flipbooks/shugg-brochure/pages/page-04.webp",
+          "/flipbooks/shugg-brochure/pages/page-05.webp",
+          "/flipbooks/shugg-brochure/pages/page-06.webp",
+          "/flipbooks/shugg-brochure/pages/page-07.webp",
+          "/flipbooks/shugg-brochure/pages/page-08.webp"
+        ]
+      }
+    </script>
+  </div>
+  <script src="/js/flipbook.js"></script>
+</body>
+</html>

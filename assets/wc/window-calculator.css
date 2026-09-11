@@ -291,11 +291,9 @@
 
 .price-list {
     padding-top: 10px;
-    max-width: 380px;
 }
 
 .price-row {
-    display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 20px;

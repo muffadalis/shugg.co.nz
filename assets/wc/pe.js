@@ -1,7 +1,7 @@
 import { CuttingOptimizer } from "./co.js";
 
 const optimizer = new CuttingOptimizer();
-console.log("optimizer:", optimizer);
+// console.log("optimizer:", optimizer);
 
 (function (window) {
     "use strict";
@@ -59,8 +59,8 @@ console.log("optimizer:", optimizer);
             bladeThickness: 2.5
         });
 
-        console.log(results);
-        console.log(inputWindows);
+        // console.log(results);
+        // console.log(inputWindows);
 
         return {
             ok: true,
@@ -161,7 +161,7 @@ console.log("optimizer:", optimizer);
     }
 
     function calcTravel(input) {
-        //console.log("Calculating travel for input:", input);
+        // console.log("Calculating travel for input:", input);
         return {
             ok: true,
             cost: round2((input.quantity * config.travelBase) + config.labourRates.travelPerHour),
@@ -246,29 +246,31 @@ console.log("optimizer:", optimizer);
                     component: round2(perUnitBreakdown.component),
                     installLabour: round2(perUnitBreakdown.installLabour),
                     manufacture: round2(perUnitBreakdown.manufacture),
-                    metal: round2(perUnitBreakdown.metal)
-                },
-                extended: {
-                    glass: round2(perUnitBreakdown.glass * quantity),
-                    polishing: round2(perUnitBreakdown.polishing * quantity),
-                    lead: round2(perUnitBreakdown.lead * quantity),
-                    component: round2(perUnitBreakdown.component * quantity),
-                    installLabour: round2(perUnitBreakdown.installLabour * quantity),
-                    manufacture: round2(perUnitBreakdown.manufacture * quantity),
                     travel: round2(perJobBreakdown.travel),
-                    metal: round2(perUnitBreakdown.metal * quantity)
-                }
+                    metal: round2(perUnitBreakdown.metal),
+                    areaM2: modules.glass.meta.areaM2,
+                },
+                // extended: {
+                //     glass: round2(perUnitBreakdown.glass * quantity),
+                //     polishing: round2(perUnitBreakdown.polishing * quantity),
+                //     lead: round2(perUnitBreakdown.lead * quantity),
+                //     component: round2(perUnitBreakdown.component * quantity),
+                //     installLabour: round2(perUnitBreakdown.installLabour * quantity),
+                //     manufacture: round2(perUnitBreakdown.manufacture * quantity),
+                //     travel: round2(perJobBreakdown.travel),
+                //     metal: round2(perUnitBreakdown.metal * quantity),
+                //     areaM2: modules.glass.meta.areaM2,
+                // }
             },
-            meta: {
-                areaM2: modules.glass.meta.areaM2,
-                perimeterM: modules.polishing.meta.perimeterM,
-                leadKg: modules.lead.meta.leadKg,
-                installHours: modules.installLabour.meta.installHours,
-                installRate: modules.installLabour.meta.installRate,
-                manufactureHours: modules.manufacture.meta.manufactureHours,
-                manufactureRate: modules.manufacture.meta.manufactureRate,
-                distanceKm: modules.travel.meta.distanceKm
-            },
+            // meta: {
+            //     perimeterM: modules.polishing.meta.perimeterM,
+            //     leadKg: modules.lead.meta.leadKg,
+            //     installHours: modules.installLabour.meta.installHours,
+            //     installRate: modules.installLabour.meta.installRate,
+            //     manufactureHours: modules.manufacture.meta.manufactureHours,
+            //     manufactureRate: modules.manufacture.meta.manufactureRate,
+            //     distanceKm: modules.travel.meta.distanceKm
+            // },
             totals: {
                 perUnitSubtotal,
                 perJobSubtotal,
@@ -283,18 +285,60 @@ console.log("optimizer:", optimizer);
         };
     }
 
-    function buildQuoteOutput(result) {
+    function buildQuoteOutput(result, debug = false) {
+        if (debug) {
+            return buildQuoteOutputDebug(result);
+        }
+        else {
+            return buildQuoteOutputProd(result);
+        }
+    }
+
+    function buildQuoteOutputProd(result) {
+        if (!result.ok) {
+            return {
+                text: "",
+                html: `
+                <div class="price-error">
+                    Unable to give an estimate for the seleted combination of options. Please contact us for a quote.
+                </div>
+                <div class="">
+                <a href="/assets/docs/Quote Order From.pdf" target="_blank" class="btn-getstarted">Get a Quote Now!</a>
+                </div>
+                `
+
+            };
+        }
+
+        // <span class="flag flag-standard"></span>
+        const text = ""
+        const html = `
+      <div class="price-label">
+        <span>Total ex GST: </span>
+      </div>
+      <div class="price-value">${money(result.totals.exGstTotal)}</div>
+
+    `;
+
+        return { text, html };
+
+
+    }
+
+    function buildQuoteOutputDebug(result) {
         if (!result.ok) {
             return {
                 text: result.error,
-                html: `<div class="quote-error">${result.error}</div>`
+                html: `
+                <div class="quote-error">${result.error}</div>
+                <a href="/assets/docs/Quote Order From.pdf" target="_blank" class="btn-getstarted">Get a Quote Now!</a>
+                `
             };
         }
 
         const b = result.breakdown;
         const t = result.totals;
         const i = result.input;
-        const m = result.meta;
 
         const text = [
             `Quote Summary`,
@@ -304,7 +348,7 @@ console.log("optimizer:", optimizer);
             `Thickness: ${i.thickness} mm`,
             `Size: ${i.widthM} x ${i.heightM} mm`,
             `Qty: ${i.quantity}`,
-            `Area: ${m.areaM2} m²`,
+            `Area: ${i.areaM2} m²`,
             ``,
             `Per unit:`,
             `Glass: ${money(b.perUnit.glass)}`,
@@ -313,16 +357,6 @@ console.log("optimizer:", optimizer);
             `Component: ${money(b.perUnit.component)}`,
             `Install Labour: ${money(b.perUnit.installLabour)}`,
             `Manufacture: ${money(b.perUnit.manufacture)}`,
-            ``,
-            `Extended:`,
-            `Glass: ${money(b.extended.glass)}`,
-            `Polishing: ${money(b.extended.polishing)}`,
-            `Lead: ${money(b.extended.lead)}`,
-            `Component: ${money(b.extended.component)}`,
-            `Install Labour: ${money(b.extended.installLabour)}`,
-            `Manufacture: ${money(b.extended.manufacture)}`,
-            `Travel: ${money(b.extended.travel)}`,
-            `Metal: ${money(b.extended.metal)}`,
             ``,
             `Cost Subtotal: ${money(t.costSubtotal)}`,
             `Margin (${Math.round(t.marginRate * 100)}%): ${money(t.marginAmount)}`,
@@ -340,18 +374,18 @@ console.log("optimizer:", optimizer);
         <div><strong>Thickness:</strong> ${i.thickness} mm</div>
         <div><strong>Size:</strong> ${i.widthM} x ${i.heightM} mm</div>
         <div><strong>Qty:</strong> ${i.quantity}</div>
-        <div><strong>Area:</strong> ${m.areaM2} m²</div>
+        <div><strong>Area:</strong> ${i.areaM2} m²</div>
 
         <hr>
 
-        <div class="quote-row"><span>Glass</span><span>${money(b.extended.glass)}</span></div>
-        <div class="quote-row"><span>Polishing</span><span>${money(b.extended.polishing)}</span></div>
-        <div class="quote-row"><span>Lead</span><span>${money(b.extended.lead)}</span></div>
-        <div class="quote-row"><span>Component</span><span>${money(b.extended.component)}</span></div>
-        <div class="quote-row"><span>Install Labour</span><span>${money(b.extended.installLabour)}</span></div>
-        <div class="quote-row"><span>Manufacture</span><span>${money(b.extended.manufacture)}</span></div>
-        <div class="quote-row"><span>Travel</span><span>${money(b.extended.travel)}</span></div>
-        <div class="quote-row"><span>Metal</span><span>${money(b.extended.metal)}</span></div>
+        <div class="quote-row"><span>Glass</span><span>${money(b.perUnit.glass)}</span></div>
+        <div class="quote-row"><span>Polishing</span><span>${money(b.perUnit.polishing)}</span></div>
+        <div class="quote-row"><span>Lead</span><span>${money(b.perUnit.lead)}</span></div>
+        <div class="quote-row"><span>Component</span><span>${money(b.perUnit.component)}</span></div>
+        <div class="quote-row"><span>Install Labour</span><span>${money(b.perUnit.installLabour)}</span></div>
+        <div class="quote-row"><span>Manufacture</span><span>${money(b.perUnit.manufacture)}</span></div>
+        <div class="quote-row"><span>Travel</span><span>${money(b.perUnit.travel)}</span></div>
+        <div class="quote-row"><span>Metal</span><span>${money(b.perUnit.metal)}</span></div>
 
         <hr>
 

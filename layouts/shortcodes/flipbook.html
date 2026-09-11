@@ -1,0 +1,73 @@
+{{- $id := .Get "id" | default "flipbook" -}}
+{{- $title := .Get "title" | default "Flipbook" -}}
+{{- $base := .Get "base" -}}
+{{- $pages := int (.Get "pages" | default "0") -}}
+{{- $pdf := .Get "pdf" | default "" -}}
+{{- $cover := .Get "cover" | default "true" -}}
+{{- $ctaText := .Get "ctaText" | default "Get a quote" -}}
+{{- $ctaHref := .Get "ctaHref" | default "/contact/" -}}
+{{- $aspectWidth := .Get "aspectWidth" | default "1241" -}}
+{{- $aspectHeight := .Get "aspectHeight" | default "1754" -}}
+{{- $thumbs := .Get "thumbs" | default (printf "%s/../thumbs" $base) -}}
+{{- $ext := .Get "ext" | default "webp" -}}
+
+{{- $pageList := slice -}}
+{{- $thumbList := slice -}}
+{{- range seq 1 $pages -}}
+  {{- $filename := printf "page-%02d.%s" . $ext -}}
+  {{- $pageList = $pageList | append (printf "%s/%s" $base $filename) -}}
+  {{- $thumbList = $thumbList | append (printf "%s/%s" $thumbs $filename) -}}
+{{- end -}}
+
+<div class="flipbook-shell" id="{{ $id }}-shell">
+  <div class="flipbook-topbar">
+    <div>
+      <div class="flipbook-kicker">Interactive brochure</div>
+      <h1 class="flipbook-title">{{ $title }}</h1>
+    </div>
+    <div class="flipbook-actions">
+      <a class="flipbook-btn is-primary" href="{{ $ctaHref }}">{{ $ctaText }}</a>
+      {{ if $pdf }}<a class="flipbook-btn" href="{{ $pdf }}" target="_blank" rel="noopener">Download PDF</a>{{ end }}
+    </div>
+  </div>
+
+  <div class="flipbook-stage-wrap">
+    <button class="flipbook-nav flipbook-prev" type="button" aria-label="Previous page">‹</button>
+    <div class="flipbook-stage">
+      <div class="flipbook-canvas" id="{{ $id }}"></div>
+    </div>
+    <button class="flipbook-nav flipbook-next" type="button" aria-label="Next page">›</button>
+  </div>
+
+  <div class="flipbook-toolbar">
+    <div class="flipbook-page-status">
+      <span class="flipbook-current">1</span>
+      <span>/</span>
+      <span class="flipbook-total">{{ $pages }}</span>
+    </div>
+    <div class="flipbook-toolbar-actions">
+      <button class="flipbook-btn is-small js-toggle-thumbs" type="button">Thumbnails</button>
+      <button class="flipbook-btn is-small js-fullscreen" type="button">Fullscreen</button>
+    </div>
+  </div>
+
+  <div class="flipbook-thumbs" hidden>
+    {{ range $i, $thumb := $thumbList }}
+      <button class="flipbook-thumb" type="button" data-page="{{ add $i 1 }}">
+        <img src="{{ $thumb }}" alt="{{ $title }} page {{ add $i 1 }} thumbnail" loading="lazy">
+        <span>Page {{ add $i 1 }}</span>
+      </button>
+    {{ end }}
+  </div>
+
+  <script type="application/json" class="flipbook-config">
+    {
+      "id": {{ $id | jsonify }},
+      "title": {{ $title | jsonify }},
+      "showCover": {{ $cover }},
+      "aspectWidth": {{ $aspectWidth }},
+      "aspectHeight": {{ $aspectHeight }},
+      "pages": {{ $pageList | jsonify }}
+    }
+  </script>
+</div>
