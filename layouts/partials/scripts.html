@@ -17,7 +17,8 @@
 <script src="{{ "assets/vendor/swiper/swiper-bundle.min.js" | relURL }}"></script>
 
 <!-- Main JS File -->
-<script src="{{ "assets/js/main.js" | relURL }}"></script>
+{{ $mainJs := resources.Get "js/main.js" | fingerprint }}
+<script src='{{ $mainJs.RelPermalink }}'></script>
 
 {{ $pdJs := resources.Get "wc/pd.js" | fingerprint }}
 <script src='{{ $pdJs.RelPermalink }}'></script>
@@ -26,7 +27,11 @@
 <script  type="module"  src='{{ $peJs.RelPermalink }}'></script>
 
 {{ $calcJs := resources.Get "wc/window-calculator.js" | js.Build | fingerprint }}
-<script type="module" src="{{ $calcJs.RelPermalink }}"></script>
+<!-- <script type="module" src="{{ $calcJs.RelPermalink }}"></script> -->
+
+<!-- <script defer src="/assets/js/flipbook.js"></script> -->
+
+<script defer src="{{ "assets/js/order-form.js" | relURL }}"></script>
 
 <!-- Cookie Consent Banner -->
 <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>

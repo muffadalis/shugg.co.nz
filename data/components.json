@@ -1,33 +1,13 @@
 [
   {
-    "title": "Pin",
-    "slug": "pin",
-    "sku": "COMP-PIN",
-    "price": 7.00,
+    "title": "Acrylic lift",
+    "slug": "acrylic-lift",
+    "sku": "COMP-ACRYLIC",
+    "price": 15.00,
     "unit": "each",
-    "summary": "Replacement pin component.",
-    "description": "Pin for Shugg vertical sliding window servicing and replacement work.",
-    "image": ""
-  },
-  {
-    "title": "H Plastic",
-    "slug": "h-plastic",
-    "sku": "COMP-HPLASTIC",
-    "price": 10.00,
-    "unit": "each",
-    "summary": "Plastic H section component.",
-    "description": "H Plastic for Shugg vertical sliding window servicing and replacement work.",
-    "image": ""
-  },
-  {
-    "title": "Sash cord",
-    "slug": "sash-cord",
-    "sku": "COMP-SASHCORD",
-    "price": 8.00,
-    "unit": "each",
-    "summary": "Replacement sash cord.",
-    "description": "Sash cord for Shugg vertical sliding window servicing and replacement work.",
-    "image": ""
+    "summary": "Acrylic lift replacement part.",
+    "description": "Acrylic lift for Shugg vertical sliding window servicing and replacement work.",
+    "image": "/assets/img/components/acrylic_lift.png"
   },
   {
     "title": "Adhesive Tube",
@@ -40,23 +20,24 @@
     "image": ""
   },
   {
-    "title": "Lock Satin chrome",
+    "title": "H Plastic",
+    "slug": "h-plastic",
+    "sku": "COMP-HPLASTIC",
+    "price": 10.00,
+    "unit": "each",
+    "summary": "Plastic H section component.",
+    "description": "H Plastic for Shugg vertical sliding window servicing and replacement work.",
+    "image": "/assets/img/components/h-plastic.png"
+  },
+  {
+    "title": "Lock Anodised",
     "slug": "lock-satin-chrome",
     "sku": "COMP-LOCK-SC",
     "price": 75.00,
     "unit": "each",
-    "summary": "Satin chrome lock option.",
-    "description": "Lock Satin chrome for Shugg vertical sliding window servicing and replacement work.",
-    "image": ""
-  },
-  {
-    "title": "Lock Other finish",
-    "slug": "lock-other-finish",
-    "sku": "COMP-LOCK-OF",
-    "price": 55.00,
-    "unit": "each",
-    "summary": "Lock in alternate finish.",
-    "description": "Lock Other finish for Shugg vertical sliding window servicing and replacement work.",
+    "finish": "anodised",
+    "summary": "Anodised lock. Choose a colour below.",
+    "description": "Anodised lock for Shugg vertical sliding window servicing and replacement work.",
     "image": ""
   },
   {
@@ -70,28 +51,65 @@
     "image": ""
   },
   {
-    "title": "Acrylic lift",
-    "slug": "acrylic-lift",
-    "sku": "COMP-ACRYLIC",
-    "price": 15.00,
+    "title": "Lock Powdercoated",
+    "slug": "lock-other-finish",
+    "sku": "COMP-LOCK-OF",
+    "price": 55.00,
     "unit": "each",
-    "summary": "Acrylic lift replacement part.",
-    "description": "Acrylic lift for Shugg vertical sliding window servicing and replacement work.",
-    "bulkPrice": 11.00,
-    "bulkNote": "100 plus",
+    "finish": "powdercoated",
+    "summary": "Powdercoated lock. Choose a colour below.",
+    "description": "Powdercoated lock for Shugg vertical sliding window servicing and replacement work.",
     "image": ""
   },
   {
-    "title": "Mideseals",
-    "slug": "mideseals",
-    "sku": "COMP-MIDESEALS",
-    "price": 15.00,
+    "title": "Midseal 013A 10mm",
+    "slug": "midseal-013a-10mm",
+    "sku": "COMP-MIDSEAL-013A-10",
+    "price": 20.00,
     "unit": "each",
-    "summary": "Replacement mideseals.",
-    "description": "Mideseals for Shugg vertical sliding window servicing and replacement work.",
-    "bulkPrice": 11.00,
-    "bulkNote": "< 1m",
-    "image": ""
+    "summary": "10mm midseal, item 013A, high clear PVC (hard).",
+    "description": "Midseal item 013A, 10mm thickness, high clear PVC (hard), for Shugg vertical sliding window servicing and replacement work.",
+    "image": "/assets/img/components/midseal-013a-10mm.png"
+  },
+  {
+    "title": "Midseal 013A 12mm",
+    "slug": "midseal-013a-12mm",
+    "sku": "COMP-MIDSEAL-013A-12",
+    "price": 20.00,
+    "unit": "each",
+    "summary": "12mm midseal, item 013A, high clear PVC (hard).",
+    "description": "Midseal item 013A, 12mm thickness, high clear PVC (hard), for Shugg vertical sliding window servicing and replacement work.",
+    "image": "/assets/img/components/midseal-013a-12mm.png"
+  },
+  {
+    "title": "Midseal 8mm",
+    "slug": "midseal-8mm",
+    "sku": "COMP-MIDSEAL-8",
+    "price": 20.00,
+    "unit": "each",
+    "summary": "8mm midseal, high clear PVC (hard), existing mould.",
+    "description": "Midseal, 8mm thickness, high clear PVC (hard), for Shugg vertical sliding window servicing and replacement work.",
+    "image": "/assets/img/components/midseal-8mm.png"
+  },
+  {
+    "title": "Midseal 10mm",
+    "slug": "midseal-10mm",
+    "sku": "COMP-MIDSEAL-10",
+    "price": 20.00,
+    "unit": "each",
+    "summary": "10mm midseal, high clear PVC (hard).",
+    "description": "Midseal, 10mm thickness, high clear PVC (hard), for Shugg vertical sliding window servicing and replacement work.",
+    "image": "/assets/img/components/midseal-10mm.png"
+  },
+  {
+    "title": "Midseal 12mm",
+    "slug": "midseal-12mm-pc",
+    "sku": "COMP-MIDSEAL-12-PC",
+    "price": 20.00,
+    "unit": "each",
+    "summary": "12mm midseal, super clear PC (hard).",
+    "description": "Midseal, 12mm thickness, super clear PC (hard), for Shugg vertical sliding window servicing and replacement work.",
+    "image": "/assets/img/components/midseal-12mm-pc.png"
   },
   {
     "title": "Mohair",
@@ -101,6 +119,26 @@
     "unit": "1m",
     "summary": "Mohair sealing material.",
     "description": "Mohair for Shugg vertical sliding window servicing and replacement work.",
+    "image": ""
+  },
+  {
+    "title": "Pin",
+    "slug": "pin",
+    "sku": "COMP-PIN",
+    "price": 7.00,
+    "unit": "each",
+    "summary": "Replacement pin component.",
+    "description": "Pin for Shugg vertical sliding window servicing and replacement work.",
+    "image": ""
+  },
+  {
+    "title": "Sash cord",
+    "slug": "sash-cord",
+    "sku": "COMP-SASHCORD",
+    "price": 8.00,
+    "unit": "1m",
+    "summary": "Replacement sash cord.",
+    "description": "Sash cord for Shugg vertical sliding window servicing and replacement work.",
     "image": ""
   }
 ]

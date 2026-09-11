@@ -1,0 +1,60 @@
+{
+  "_source": "https://www.altherm.co.nz/colours",
+  "anodised": [
+    "Natural Silver",
+    "Light Bronze",
+    "Medium Bronze",
+    "Dark Bronze",
+    "Black",
+    "Champagne"
+  ],
+  "powdercoated": [
+    {
+      "range": "Duralloy PLUS",
+      "colours": [
+        "Appliance White",
+        "Arctic White",
+        "Black",
+        "Canvas Cloth",
+        "Charcoal",
+        "Flax Pod",
+        "Ghost Grey",
+        "Grey Friars",
+        "Ironsand",
+        "Karaka",
+        "Lichen",
+        "Matt Silver Pearl",
+        "Metro Coal Dust",
+        "Metro Electric Cow",
+        "Mist Green",
+        "New Denim Blue",
+        "O'Keefe Grey",
+        "Off White",
+        "Palladium Silver",
+        "Sandstone Grey",
+        "Titania",
+        "Warm White Pearl",
+        "Window Bronze",
+        "Windsor Grey"
+      ]
+    },
+    {
+      "range": "Protexture",
+      "colours": [
+        "Appliance White",
+        "Arctic White",
+        "Black",
+        "Charcoal",
+        "Flax Pod",
+        "Grey Friars",
+        "Ironsand",
+        "Karaka",
+        "Metro Silver Pearl",
+        "Sandstone Grey",
+        "Titania",
+        "Warm White Pearl",
+        "Windsor Grey"
+      ]
+    }
+  ]
+}

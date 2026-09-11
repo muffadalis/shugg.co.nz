@@ -909,7 +909,8 @@ section,
   }
 }
 
-.hero .btn-get-started {
+.price-list .btn-getstarted,
+.hero .btn-getstarted {
   color: var(--contrast-color);
   background: var(--accent-color);
   font-family: var(--heading-font);
@@ -924,7 +925,8 @@ section,
   animation: fadeInUp 1s both 0.4s;
 }
 
-.hero .btn-get-started:hover {
+.price-list .btn-getstarted,
+.hero .btn-getstarted:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
 

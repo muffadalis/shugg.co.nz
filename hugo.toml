@@ -3,3 +3,9 @@ languageCode = "en-us"
 title = "Shugg - Vertical Sliding Windows & Balustrades"
 canonifyURLs = true
 relativeURLs = true
+
+[params]
+  # Component order form (layouts/components/single.html + static/assets/js/order-form.js)
+  web3forms_order_key = "8dab903b-e3b7-4428-a0d5-3db01d0725b6"
+  order_form_endpoint = "https://api.web3forms.com/submit"
+  order_notify_email  = "info@shugg.co.nz"
