@@ -62,24 +62,24 @@
     "image": ""
   },
   {
-    "title": "Midseal 013A 10mm",
-    "slug": "midseal-013a-10mm",
-    "sku": "COMP-MIDSEAL-013A-10",
+    "title": "Midseal 5mm",
+    "slug": "midseal-5mm",
+    "sku": "COMP-MIDSEAL-5",
     "price": 20.00,
     "unit": "each",
-    "summary": "10mm midseal, item 013A, high clear PVC (hard).",
-    "description": "Midseal item 013A, 10mm thickness, high clear PVC (hard), for Shugg vertical sliding window servicing and replacement work.",
-    "image": "/assets/img/components/midseal-013a-10mm.png"
+    "summary": "5mm midseal.",
+    "description": "Midseal, 5mm thickness, for Shugg vertical sliding window servicing and replacement work.",
+    "image": "/assets/img/components/midseal-5mm.png"
   },
   {
-    "title": "Midseal 013A 12mm",
-    "slug": "midseal-013a-12mm",
-    "sku": "COMP-MIDSEAL-013A-12",
+    "title": "Midseal 6mm",
+    "slug": "midseal-6mm",
+    "sku": "COMP-MIDSEAL-6",
     "price": 20.00,
     "unit": "each",
-    "summary": "12mm midseal, item 013A, high clear PVC (hard).",
-    "description": "Midseal item 013A, 12mm thickness, high clear PVC (hard), for Shugg vertical sliding window servicing and replacement work.",
-    "image": "/assets/img/components/midseal-013a-12mm.png"
+    "summary": "6mm midseal.",
+    "description": "Midseal, 6mm thickness, for Shugg vertical sliding window servicing and replacement work.",
+    "image": "/assets/img/components/midseal-6mm.png"
   },
   {
     "title": "Midseal 8mm",
@@ -87,29 +87,39 @@
     "sku": "COMP-MIDSEAL-8",
     "price": 20.00,
     "unit": "each",
-    "summary": "8mm midseal, high clear PVC (hard), existing mould.",
-    "description": "Midseal, 8mm thickness, high clear PVC (hard), for Shugg vertical sliding window servicing and replacement work.",
+    "summary": "8mm midseal.",
+    "description": "Midseal, 8mm thickness, for Shugg vertical sliding window servicing and replacement work.",
     "image": "/assets/img/components/midseal-8mm.png"
   },
   {
-    "title": "Midseal 10mm",
-    "slug": "midseal-10mm",
-    "sku": "COMP-MIDSEAL-10",
+    "title": "Midseal 10mm Ex",
+    "slug": "midseal-10mm-ex",
+    "sku": "COMP-MIDSEAL-10EX-1",
     "price": 20.00,
     "unit": "each",
-    "summary": "10mm midseal, high clear PVC (hard).",
-    "description": "Midseal, 10mm thickness, high clear PVC (hard), for Shugg vertical sliding window servicing and replacement work.",
-    "image": "/assets/img/components/midseal-10mm.png"
+    "summary": "10mm Ex midseal.",
+    "description": "Midseal, 10mm Ex thickness, for Shugg vertical sliding window servicing and replacement work.",
+    "image": "/assets/img/components/midseal-10mm-ex-1.png"
   },
   {
     "title": "Midseal 12mm",
-    "slug": "midseal-12mm-pc",
-    "sku": "COMP-MIDSEAL-12-PC",
+    "slug": "midseal-12mm",
+    "sku": "COMP-MIDSEAL-12",
     "price": 20.00,
     "unit": "each",
-    "summary": "12mm midseal, super clear PC (hard).",
-    "description": "Midseal, 12mm thickness, super clear PC (hard), for Shugg vertical sliding window servicing and replacement work.",
-    "image": "/assets/img/components/midseal-12mm-pc.png"
+    "summary": "12mm midseal.",
+    "description": "Midseal, 12mm thickness, for Shugg vertical sliding window servicing and replacement work.",
+    "image": "/assets/img/components/midseal-12mm-1.png"
+  },
+  {
+    "title": "Midseal 12mm Ex",
+    "slug": "midseal-12mm-ex",
+    "sku": "COMP-MIDSEAL-12EX",
+    "price": 20.00,
+    "unit": "each",
+    "summary": "12mm Ex midseal.",
+    "description": "Midseal, 12mm Ex thickness, for Shugg vertical sliding window servicing and replacement work.",
+    "image": "/assets/img/components/midseal-12mm-ex.png"
   },
   {
     "title": "Mohair",
